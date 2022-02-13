@@ -1,7 +1,7 @@
 
 function photoColumn() {
     return <div>
-        
+
     </div>
 }
 
