@@ -1,0 +1,6 @@
+.photosBox {
+    background-color: gray;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}

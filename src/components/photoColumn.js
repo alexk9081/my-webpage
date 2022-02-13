@@ -1,7 +1,8 @@
+import classes from './photoColumn.module.css'
 
 function photoColumn() {
-    return <div>
-
+    return <div className={classes.column}>
+        PlaceHolder Text
     </div>
 }
 
