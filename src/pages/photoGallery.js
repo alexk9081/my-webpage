@@ -4,13 +4,14 @@ import classes from './photoGallery.module.css';
 import { useState, useEffect } from 'react';
 
 import { initializeApp } from "firebase/app";
-import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import { getStorage, ref, getDownloadURL, list } from "firebase/storage";
 import Photo from "../components/photo";
 
 
 function GalleryPage() {
     const [isLoading, setIsLoading] = useState(true);
-    const [returnedPictures, setReturnedPictures] = useState([]);
+    const [picture, setPicture] = useState([]);
+    // const [returnedPictures, setReturnedPictures] = useState([]);
 
     useEffect(() => {
         setIsLoading(true);
@@ -26,9 +27,14 @@ function GalleryPage() {
         const app = initializeApp(firebaseConfig);
         const storage = getStorage(app);
 
+        // const listRef = ref(storage, "anm");
+        // const firstPage = list(listRef, { maxResults: 100 });
+        
+        // setReturnedPictures(firstPage.items);
+
         getDownloadURL(ref(storage, 'anm/1E9FFE32-FD68-4B4D-93AF-E0B2890B5FFD.jpeg'))
         .then((url) => {
-            setReturnedPictures(url);
+            setPicture(url);
             setIsLoading(false);
         })
         .catch((error) => {
@@ -44,7 +50,7 @@ function GalleryPage() {
 
     return <div className={classes.photosBox}>
         <div>
-            <Photo src={returnedPictures}/>
+            <Photo src={picture}/>
         </div>
         <PhotoColumn />
         <PhotoColumn />
