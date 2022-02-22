@@ -12,8 +12,10 @@ function GalleryPage() {
 
     //Get image urls from database
     useEffect(() => {
+        //Ensure loading page is shown while database is queried
         setIsLoading(true);
-
+        
+        //Set up firebase connection
         const firebaseConfig = {
             apiKey: "AIzaSyAqJg-fe3fayu8xapocNCJSzKm4XGhzq5E",
             authDomain: "personalwebsite-51254.firebaseapp.com",
@@ -28,15 +30,13 @@ function GalleryPage() {
 
         var storageRef = ref(storage, 'anm');
 
+        //Get image addresses from firebase
         var images = [];
+
         listAll(storageRef).then(function (result) {
-            
-            console.log("getting images");
             result.items.forEach(function (imageRef) {
-                console.log("downloaidng images")
                 getDownloadURL(ref(storage, imageRef))
                     .then(function (url) {
-                        console.log("added element to preset")
                         images.push(url);
                         setPictureSet(images);
                     })
@@ -44,14 +44,12 @@ function GalleryPage() {
                         console.log(error);
                     });
             });
-            
-           
         })
         .catch(function (error) {
             console.log(error);
         });
 
-        console.log("Loaded");
+        //Return regular page once loaded
         setIsLoading(false);
     }, []);
 
@@ -64,9 +62,8 @@ function GalleryPage() {
 
     return <div className={classes.photosBox}>
         {
-
             pictureSet.map(val => {
-                return <h1>Link: {val} </h1>
+                return <h1 key={val}>Link: {val} </h1>
             })
         }
         <PhotoColumn photoSet={pictureSet} />
