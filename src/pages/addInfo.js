@@ -1,5 +1,5 @@
 import Input from '../components/inputBox'
-import classes from './addInfo.module.css';
+// import classes from './addInfo.module.css';
 
 function AddInfo() {
     return <div>
