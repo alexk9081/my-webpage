@@ -3,6 +3,8 @@ import NavigationBar from './layout/navigation';
 import GalleryPage from './pages/photoGallery';
 import HomePage from './pages/homePage';
 import ProjectInfoPage from './pages/aboutProject';
+import AddInfo from './pages/addInfo';
+
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
         </Route>
         <Route path='/info'>
           <ProjectInfoPage />
+        </Route>
+        <Route path='/data'>
+          <AddInfo />
         </Route>
       </Switch>
     </div>
