@@ -14,7 +14,7 @@ function GalleryPage() {
     useEffect(() => {
         //Ensure loading page is shown while database is queried
         setIsLoading(true);
-        
+
         //Set up firebase connection
         const firebaseConfig = {
             apiKey: "AIzaSyAqJg-fe3fayu8xapocNCJSzKm4XGhzq5E",
@@ -30,26 +30,22 @@ function GalleryPage() {
 
         var storageRef = ref(storage, 'anm');
 
-        //Get image addresses from firebase
-        var images = [];
-
         listAll(storageRef).then(function (result) {
-            result.items.forEach(function (imageRef) {
-                getDownloadURL(ref(storage, imageRef))
-                    .then(function (url) {
-                        images.push(url);
-                        setPictureSet(images);
-                    })
-                    .catch(error =>{
-                        console.log(error);
-                    });
-            });
+            Promise.all(result.items.map((input) => {
+                return getDownloadURL(ref(storage, input))
+                })
+            )
+                // .then(urls => { //This doesnt work for some reason
+                //     setPictureSet(urls)        
+                // })
+                // .catch(function (error) {
+                //     console.log(error);
+                // })
         })
-        .catch(function (error) {
-            console.log(error);
-        });
+            .catch(function (error) {
+                console.log(error);
+            });
 
-        //Return regular page once loaded
         setIsLoading(false);
     }, []);
 
@@ -60,12 +56,7 @@ function GalleryPage() {
         </div>
     }
 
-    return <div className={classes.photosBox}>
-        {
-            pictureSet.map(val => {
-                return <h1 key={val}>Link: {val} </h1>
-            })
-        }
+    return <div className={classes.photosBox} id='main'>
         <PhotoColumn photoSet={pictureSet} />
         <PhotoColumn />
         <PhotoColumn />

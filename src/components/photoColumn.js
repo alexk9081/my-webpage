@@ -1,20 +1,28 @@
 import classes from './photoColumn.module.css'
 import Photo from './photo.js'
+import { useEffect, useState } from 'react';
 
-function photoColumn(props) {
-    var photoSet = [];
+function PhotoColumn(props) {
+    const [photoSet, setPhotoSet] = useState([]);
 
-    for(var img in props.photoSet){
-        photoSet.push(img);
-    }
+    useEffect(() => {
+        if(props.photoSet !== undefined && photoSet !== props.photoSet){
+            let urlArr = [];
+            props.photoSet.forEach(promise => {
+                promise.then(url => (urlArr.push(url)))
+            })
+        }
+    }, [props.photoSet, photoSet])
 
     return <div className={classes.column}>
-    {
-        photoSet.map(val => {
-            return <Photo src={val}  key={val} />
-        })
-    }
+        <Photo />
+        {
+            // console.log(photoSet)
+            // photoSet.map((url) => {
+            //     return <div key={url}>{url}</div>
+            // })
+        }
     </div>
 }
 
-export default photoColumn;
+export default PhotoColumn;

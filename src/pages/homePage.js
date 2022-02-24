@@ -7,6 +7,10 @@ function HomePage() {
             <div>
                 THIS IS FILLER CONTENT FOR THE HOME PAGE
             </div>
+            <section>
+                {
+                }
+            </section>
         </main>
     </div>
 }
