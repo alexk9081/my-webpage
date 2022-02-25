@@ -1,15 +1,12 @@
 import IntroBox from "../components/introBox";
+import BlogPost from "../components/blogPost.js";
 
 function HomePage() {
     return <div>
         <main>
             <IntroBox />
-            <div>
-                THIS IS FILLER CONTENT FOR THE HOME PAGE
-            </div>
             <section>
-                {
-                }
+                <BlogPost />
             </section>
         </main>
     </div>

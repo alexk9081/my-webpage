@@ -11,7 +11,7 @@ function IntroBox() {
             setText([txt])
         })
 
-    return <div>
+    return <div className={classes.intro}>
         {
             text.map((info) => (
                 <div key={info}>{info}</div>
