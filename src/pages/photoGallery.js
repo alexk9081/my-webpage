@@ -1,15 +1,19 @@
 import PhotoColumn from "../components/photoColumn";
+import Photo from '../components/photo.js'
 import classes from './photoGallery.module.css';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 
 import { initializeApp } from "firebase/app";
 import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
 
 function GalleryPage() {
     const [isLoading, setIsLoading] = useState(true);
-    const [pictureSet, setPictureSet] = useState([]);
 
+    const elements = useMemo(() => [], []);
+
+    const num = useRef(0);
+    
     //Get image urls from database
     useEffect(() => {
         //Ensure loading page is shown while database is queried
@@ -31,23 +35,27 @@ function GalleryPage() {
         var storageRef = ref(storage, 'anm');
 
         listAll(storageRef).then(function (result) {
-            Promise.all(result.items.map((input) => {
+            result.items.map((input) => {
                 return getDownloadURL(ref(storage, input))
+            })
+                .forEach(promise => {
+                    num.current += 1; 
+                    promise.then(url => {
+                        elements.push(<Photo src={url}/>);
+                        if(elements.length)
+                        console.log(elements);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    })  
                 })
-            )
-                // .then(urls => { //This doesnt work for some reason
-                //     setPictureSet(urls)        
-                // })
-                // .catch(function (error) {
-                //     console.log(error);
-                // })
         })
             .catch(function (error) {
                 console.log(error);
             });
 
         setIsLoading(false);
-    }, []);
+    }, [elements]);
 
     //Return loading page while database is being queried
     if (isLoading) {
@@ -57,9 +65,15 @@ function GalleryPage() {
     }
 
     return <div className={classes.photosBox} id='main'>
-        <PhotoColumn photoSet={pictureSet} />
-        <PhotoColumn />
-        <PhotoColumn />
+        <PhotoColumn>
+            {elements}
+        </PhotoColumn>
+        <PhotoColumn>
+            {/* {<div>{num}</div>} */}
+        </PhotoColumn>
+        <PhotoColumn>
+            
+        </PhotoColumn>
     </div>
 }
 
