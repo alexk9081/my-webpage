@@ -2,19 +2,18 @@ import PhotoColumn from "../components/photoColumn";
 import Photo from '../components/photo.js'
 import classes from './photoGallery.module.css';
 
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import { initializeApp } from "firebase/app";
 import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
 
 function GalleryPage() {
     const [isLoading, setIsLoading] = useState(true);
+    const [picElements, setPicElements] = useState([]);
 
-    const elements = useMemo(() => [], []);
-
-    const num = useRef(0);
-    
+    const picElemRef = useRef(picElements);
     //Get image urls from database
+    useEffect(() => { picElemRef.current = picElements })
     useEffect(() => {
         //Ensure loading page is shown while database is queried
         setIsLoading(true);
@@ -35,27 +34,31 @@ function GalleryPage() {
         var storageRef = ref(storage, 'anm');
 
         listAll(storageRef).then(function (result) {
-            result.items.map((input) => {
+            const allPromises = result.items.map((input) => {
                 return getDownloadURL(ref(storage, input))
             })
-                .forEach(promise => {
-                    num.current += 1; 
-                    promise.then(url => {
-                        elements.push(<Photo src={url}/>);
-                        if(elements.length)
-                        console.log(elements);
-                    })
+
+            for (const promise of allPromises) {
+                promise.then(async (url) => {
+                    const mapping = <Photo key={url} src={url} />;
+                    setPicElements(oldArray => [...oldArray, mapping]);
+
+                })
                     .catch(function (error) {
                         console.log(error);
-                    })  
-                })
+                    })
+            }
+
+
+
+
         })
             .catch(function (error) {
                 console.log(error);
             });
 
         setIsLoading(false);
-    }, [elements]);
+    }, []);
 
     //Return loading page while database is being queried
     if (isLoading) {
@@ -66,13 +69,14 @@ function GalleryPage() {
 
     return <div className={classes.photosBox} id='main'>
         <PhotoColumn>
-            {elements}
+            {picElements}
+            {console.log(picElements)}
         </PhotoColumn>
         <PhotoColumn>
             {/* {<div>{num}</div>} */}
         </PhotoColumn>
         <PhotoColumn>
-            
+
         </PhotoColumn>
     </div>
 }
