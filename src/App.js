@@ -4,6 +4,7 @@ import GalleryPage from './pages/photoGallery';
 import HomePage from './pages/homePage';
 import ProjectInfoPage from './pages/aboutProject';
 import AddInfo from './pages/addInfo';
+import TestPage from './pages/testPage';
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     <div>
       <NavigationBar />
       <Switch>
-        <Route path='/' exact>
+        <Route path='/my-webpage/'>
           <HomePage />
         </Route>
         <Route path='/gallery'>
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path='/data'>
           <AddInfo />
+        </Route>
+        <Route path='/test'>
+          <TestPage />
         </Route>
       </Switch>
     </div>

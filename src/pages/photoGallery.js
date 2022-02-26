@@ -10,8 +10,8 @@ import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
 function GalleryPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [picElements, setPicElements] = useState([]);
-
     const picElemRef = useRef(picElements);
+
     //Get image urls from database
     useEffect(() => { picElemRef.current = picElements })
     useEffect(() => {
@@ -30,7 +30,6 @@ function GalleryPage() {
 
         const app = initializeApp(firebaseConfig);
         const storage = getStorage(app);
-
         var storageRef = ref(storage, 'anm');
 
         listAll(storageRef).then(function (result) {
@@ -39,19 +38,14 @@ function GalleryPage() {
             })
 
             for (const promise of allPromises) {
-                promise.then(async (url) => {
+                promise.then((url) => {
                     const mapping = <Photo key={url} src={url} />;
                     setPicElements(oldArray => [...oldArray, mapping]);
-
                 })
                     .catch(function (error) {
                         console.log(error);
                     })
             }
-
-
-
-
         })
             .catch(function (error) {
                 console.log(error);
@@ -70,13 +64,14 @@ function GalleryPage() {
     return <div className={classes.photosBox} id='main'>
         <PhotoColumn>
             {picElements}
-            {console.log(picElements)}
         </PhotoColumn>
-        <PhotoColumn>
-            {/* {<div>{num}</div>} */}
-        </PhotoColumn>
-        <PhotoColumn>
 
+        <PhotoColumn>
+            {picElements}
+        </PhotoColumn>
+
+        <PhotoColumn>
+            {picElements}
         </PhotoColumn>
     </div>
 }
