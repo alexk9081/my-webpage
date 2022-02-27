@@ -24,10 +24,11 @@ function GalleryPage() {
 
 
     //Get image urls from database
-    useEffect(() => { 
-        firstPicElemRef.current = firstPicElements; 
-        secondPicElemRef.current = secondPicElements; 
-        thirdPicElemRef.current = thirdPicElements; })
+    useEffect(() => {
+        firstPicElemRef.current = firstPicElements;
+        secondPicElemRef.current = secondPicElements;
+        thirdPicElemRef.current = thirdPicElements;
+    })
     useEffect(() => {
         //Ensure loading page is shown while database is queried
         setIsLoading(true);
@@ -51,25 +52,19 @@ function GalleryPage() {
             const allPromises = result.items.map((input) => {
                 return getDownloadURL(ref(storage, input))
             })
-            
-            //Map each url to photo object and add it to shortest column
-            for (const promise of allPromises) {
-                promise.then((url) => {
-                    function getMeta(url) {
-                        var img = new Image();
-                        img.src = url;
-                        img.onload = function() { console.log(this.width); };
-                    }
-                    getMeta(url);
 
+            //Map each url to photo object and add it to next column
+            for (let i = 0; i < allPromises.length; i++) {
+                const promise = allPromises[i];
+                
+                promise.then((url) => {
                     const mappedComponent = <Photo key={url} src={url} />;
-                    console.log(firstColHeightRef.current.clientHeight +":"+ secondColHeightRef.current.clientHeight +":"+ thirdColHeightRef.current.clientHeight );
-                    if(firstColHeightRef.current.clientHeight <= secondColHeightRef.current.clientHeight && firstColHeightRef.current.clientHeight <= thirdColHeightRef.current.clientHeight){
+                    if (i % 3 === 0) {
                         setFirstPicElements(oldArray => [...oldArray, mappedComponent]);
                     }
-                    else if (secondColHeightRef.current.clientHeight <= thirdColHeightRef.current.clientHeight) {
+                    else if (i % 3 === 1) {
                         setSecondPicElements(oldArray => [...oldArray, mappedComponent]);
-                    } 
+                    }
                     else {
                         setThirdPicElements(oldArray => [...oldArray, mappedComponent]);
                     }
@@ -78,19 +73,17 @@ function GalleryPage() {
                     .catch(function (error) {
                         console.log(error);
                     })
-            }
+                }
         })
             .catch(function (error) {
                 console.log(error);
             });
-
-        setIsLoading(false);
     }, []);
 
     //Return loading page while database is being queried
     if (isLoading) {
         return <div>
-            Filler for loading page
+            Please Wait, page is loading...
         </div>
     }
 
