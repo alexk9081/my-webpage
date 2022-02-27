@@ -9,11 +9,25 @@ import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
 
 function GalleryPage() {
     const [isLoading, setIsLoading] = useState(true);
-    const [picElements, setPicElements] = useState([]);
-    const picElemRef = useRef(picElements);
+    const [firstPicElements, setFirstPicElements] = useState([]);
+    const [secondPicElements, setSecondPicElements] = useState([]);
+    const [thirdPicElements, setThirdPicElements] = useState([]);
+
+    //References so useEffect doesnt cause infinie loop
+    const firstPicElemRef = useRef(firstPicElements);
+    const secondPicElemRef = useRef(secondPicElements);
+    const thirdPicElemRef = useRef(thirdPicElements);
+
+    const firstColHeightRef = useRef();
+    const secondColHeightRef = useRef();
+    const thirdColHeightRef = useRef();
+
 
     //Get image urls from database
-    useEffect(() => { picElemRef.current = picElements })
+    useEffect(() => { 
+        firstPicElemRef.current = firstPicElements; 
+        secondPicElemRef.current = secondPicElements; 
+        thirdPicElemRef.current = thirdPicElements; })
     useEffect(() => {
         //Ensure loading page is shown while database is queried
         setIsLoading(true);
@@ -28,6 +42,7 @@ function GalleryPage() {
             appId: "1:32709056754:web:3a1cefca604f4be665586b"
         };
 
+        //Get all image urls from database
         const app = initializeApp(firebaseConfig);
         const storage = getStorage(app);
         var storageRef = ref(storage, 'anm');
@@ -36,11 +51,29 @@ function GalleryPage() {
             const allPromises = result.items.map((input) => {
                 return getDownloadURL(ref(storage, input))
             })
-
+            
+            //Map each url to photo object and add it to shortest column
             for (const promise of allPromises) {
                 promise.then((url) => {
-                    const mapping = <Photo key={url} src={url} />;
-                    setPicElements(oldArray => [...oldArray, mapping]);
+                    function getMeta(url) {
+                        var img = new Image();
+                        img.src = url;
+                        img.onload = function() { console.log(this.width); };
+                    }
+                    getMeta(url);
+
+                    const mappedComponent = <Photo key={url} src={url} />;
+                    console.log(firstColHeightRef.current.clientHeight +":"+ secondColHeightRef.current.clientHeight +":"+ thirdColHeightRef.current.clientHeight );
+                    if(firstColHeightRef.current.clientHeight <= secondColHeightRef.current.clientHeight && firstColHeightRef.current.clientHeight <= thirdColHeightRef.current.clientHeight){
+                        setFirstPicElements(oldArray => [...oldArray, mappedComponent]);
+                    }
+                    else if (secondColHeightRef.current.clientHeight <= thirdColHeightRef.current.clientHeight) {
+                        setSecondPicElements(oldArray => [...oldArray, mappedComponent]);
+                    } 
+                    else {
+                        setThirdPicElements(oldArray => [...oldArray, mappedComponent]);
+                    }
+                    
                 })
                     .catch(function (error) {
                         console.log(error);
@@ -62,16 +95,16 @@ function GalleryPage() {
     }
 
     return <div className={classes.photosBox} id='main'>
-        <PhotoColumn>
-            {picElements}
+        <PhotoColumn ref={firstColHeightRef}>
+            {firstPicElements}
         </PhotoColumn>
 
-        <PhotoColumn>
-            {picElements}
+        <PhotoColumn ref={secondColHeightRef}>
+            {secondPicElements}
         </PhotoColumn>
 
-        <PhotoColumn>
-            {picElements}
+        <PhotoColumn ref={thirdColHeightRef}>
+            {thirdPicElements}
         </PhotoColumn>
     </div>
 }

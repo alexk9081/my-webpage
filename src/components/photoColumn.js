@@ -1,16 +1,18 @@
-import { useEffect, useRef } from 'react';
+import { forwardRef } from 'react';
 import classes from './photoColumn.module.css'
 
-function PhotoColumn(props) {
-    const height = useRef();
-    
-    useEffect(() => {
-        console.log(height.current.clientHeight);
-    }, [props.children])
+function PhotoColumn(props, ref) {
+    // const height = useRef();
 
-    return <div className={classes.column} ref={height}>
+    // useEffect(() => {
+    //     console.log(height.current.clientHeight);
+    // }, [props.children])
+
+    return <div className={classes.column} ref={ref}>
         {props.children}
     </div>
 }
 
-export default PhotoColumn;
+const FwdPhotoColumn = forwardRef(PhotoColumn);
+
+export default FwdPhotoColumn;
