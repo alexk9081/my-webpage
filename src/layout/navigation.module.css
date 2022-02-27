@@ -30,6 +30,14 @@
     display: none;
     color: white;
 }
+.menu:hover {
+    transition: all 0.3s ease;
+    background-color: rgb(39, 39, 39);
+}
+
+.logo {
+    display: none;
+}
 
 @media screen and (max-width: 750px) {
     .menu {
@@ -37,11 +45,22 @@
         position: absolute;
         top: 0;
         right: 0;
-        transform: translate(-100%, 60%);
+        transform: translate(-100%, 23%);
         font-size: 1.8rem;
         cursor: pointer;
+        padding: 7px;
+        border-radius: 4px;
     }
     .navList {
         display: none;
+    }
+    .logo {
+        color: white;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 50%;
+        transform: translate(0, 60%);
+        font-size: 1.8rem;
     }
 }

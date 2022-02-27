@@ -12,9 +12,10 @@ function IntroBox() {
         })
 
     return <div className={classes.intro}>
+        <h1 className={classes.title}>Hello There!</h1>
         {
             text.map((info) => (
-                <div key={info}>{info}</div>
+                <p key={info} className={classes.body}><pre className={classes.text}>{info}</pre></p>
             ))
         }
     </div>

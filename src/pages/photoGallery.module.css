@@ -4,5 +4,15 @@
     display: flex;
     justify-content: space-between;
     width: 92%;
-    margin: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3rem;
+}
+
+.loading {
+    font-family:'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 6rem;
+    font-size: 4vw;
+    font-weight: bold;
+    text-align: center;
 }

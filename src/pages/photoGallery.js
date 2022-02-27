@@ -19,10 +19,6 @@ function GalleryPage() {
     const secondPicElemRef = useRef(secondPicElements);
     const thirdPicElemRef = useRef(thirdPicElements);
 
-    const firstColHeightRef = useRef();
-    const secondColHeightRef = useRef();
-    const thirdColHeightRef = useRef();
-
     // function iOS() {
     //     return [
     //         'iPad Simulator',
@@ -99,21 +95,21 @@ function GalleryPage() {
 
     //Return loading page while database is being queried
     if (isLoading) {
-        return <div>
+        return <div className={classes.loading}>
             Please Wait, page is loading...
         </div>
     }
 
     return <div className={classes.photosBox} id='main'>
-        <PhotoColumn ref={firstColHeightRef}>
+        <PhotoColumn>
             {firstPicElements}
         </PhotoColumn>
 
-        <PhotoColumn ref={secondColHeightRef}>
+        <PhotoColumn>
             {secondPicElements}
         </PhotoColumn>
 
-        <PhotoColumn ref={thirdColHeightRef}>
+        <PhotoColumn>
             {thirdPicElements}
         </PhotoColumn>
     </div>

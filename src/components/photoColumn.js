@@ -1,13 +1,10 @@
-import { forwardRef } from 'react';
 import classes from './photoColumn.module.css';
 
-function PhotoColumn(props, ref) {
+function PhotoColumn(props) {
 
-    return <div className={classes.column} ref={ref}>
+    return <div className={classes.column}>
         {props.children}
     </div>
 }
 
-const FwdPhotoColumn = forwardRef(PhotoColumn);
-
-export default FwdPhotoColumn;
+export default PhotoColumn;
