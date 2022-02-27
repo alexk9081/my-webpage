@@ -9,6 +9,7 @@ import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
 
 function GalleryPage() {
     const [isLoading, setIsLoading] = useState(true);
+
     const [firstPicElements, setFirstPicElements] = useState([]);
     const [secondPicElements, setSecondPicElements] = useState([]);
     const [thirdPicElements, setThirdPicElements] = useState([]);
@@ -22,6 +23,18 @@ function GalleryPage() {
     const secondColHeightRef = useRef();
     const thirdColHeightRef = useRef();
 
+    // function iOS() {
+    //     return [
+    //         'iPad Simulator',
+    //         'iPhone Simulator',
+    //         'iPod Simulator',
+    //         'iPad',
+    //         'iPhone',
+    //         'iPod'
+    //     ].includes(navigator.platform)
+    //         // iPad on iOS 13 detection
+    //         || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+    // }
 
     //Get image urls from database
     useEffect(() => {
@@ -48,6 +61,10 @@ function GalleryPage() {
         const storage = getStorage(app);
         var storageRef = ref(storage, 'anm');
 
+        function pageController() {
+            setIsLoading(false);
+        }
+
         listAll(storageRef).then(function (result) {
             const allPromises = result.items.map((input) => {
                 return getDownloadURL(ref(storage, input))
@@ -56,9 +73,9 @@ function GalleryPage() {
             //Map each url to photo object and add it to next column
             for (let i = 0; i < allPromises.length; i++) {
                 const promise = allPromises[i];
-                
+
                 promise.then((url) => {
-                    const mappedComponent = <Photo key={url} src={url} />;
+                    const mappedComponent = <Photo key={url} src={url} onLoad={pageController()} />;
                     if (i % 3 === 0) {
                         setFirstPicElements(oldArray => [...oldArray, mappedComponent]);
                     }
@@ -68,12 +85,12 @@ function GalleryPage() {
                     else {
                         setThirdPicElements(oldArray => [...oldArray, mappedComponent]);
                     }
-                    
+
                 })
                     .catch(function (error) {
                         console.log(error);
                     })
-                }
+            }
         })
             .catch(function (error) {
                 console.log(error);
