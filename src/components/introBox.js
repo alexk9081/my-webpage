@@ -15,7 +15,7 @@ function IntroBox() {
         <h1 className={classes.title}>Hello There!</h1>
         {
             text.map((info) => (
-                <p key={info} className={classes.body}><pre className={classes.text}>{info}</pre></p>
+                <div key={info} className={classes.body}><pre className={classes.text}>{info}</pre></div>
             ))
         }
     </div>

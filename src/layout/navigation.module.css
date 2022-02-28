@@ -36,7 +36,14 @@
 }
 
 .logo {
-    display: none;
+    color: white;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translate(0, 60%);
+    font-size: 1.8rem;
+    /* display: none; */
 }
 
 @media screen and (max-width: 750px) {
@@ -54,7 +61,7 @@
     .navList {
         display: none;
     }
-    .logo {
+    /* .logo {
         color: white;
         display: block;
         position: absolute;
@@ -62,5 +69,5 @@
         right: 50%;
         transform: translate(0, 60%);
         font-size: 1.8rem;
-    }
+    } */
 }
