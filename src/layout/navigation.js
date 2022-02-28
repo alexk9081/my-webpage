@@ -8,7 +8,6 @@ function NavigationBar() {
     const childRef = useRef();
 
     function showNavMenu() {
-        console.log("Clicked");
         childRef.current.openMenu();
     }
 
@@ -16,15 +15,18 @@ function NavigationBar() {
         <div>
             <Link className={classes.navItem} to='/my-webpage/'>Home</Link>
         </div>
+
         <FaRocket className={classes.logo} />
-        <FaBars className={classes.menu} onClick={showNavMenu} />
-        <NavMenu ref={childRef}/>
+        
         <div className={classes.navList}>
             {/* <Link className={classes.navItem} to='/test'>Test Page</Link> */}
             {/* <Link className={classes.navItem} to='/data'>Add Information</Link> */}
             <Link className={classes.navItem} to='/gallery'>Image Gallery</Link>
             <Link className={classes.navItem} to='/info'>About Me</Link>
         </div>
+        
+        <FaBars className={classes.mobileMenuButton} onClick={showNavMenu} />
+        <NavMenu ref={childRef}/>
     </nav>
 }
 

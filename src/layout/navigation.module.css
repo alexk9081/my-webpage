@@ -26,11 +26,11 @@
     border-color: black;
 }
 
-.menu {
+.mobileMenuButton {
     display: none;
     color: white;
 }
-.menu:hover {
+.mobileMenuButton:hover {
     transition: all 0.3s ease;
     background-color: rgb(39, 39, 39);
 }
@@ -46,8 +46,8 @@
     /* display: none; */
 }
 
-@media screen and (max-width: 750px) {
-    .menu {
+@media screen and (max-width: 850px) {
+    .mobileMenuButton {
         display: block;
         position: absolute;
         top: 0;

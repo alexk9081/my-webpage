@@ -4,24 +4,24 @@ import { FaTimes } from 'react-icons/fa';
 import classes from './navMenu.module.css';
 
 function NavMenu(props, ref) {
-    const [navMenuClasses, setNavMenuClasses] = useState([classes.menu]);
+    const [navMenuClasses, setNavMenuClasses] = useState([classes.navMenu]);
 
     useImperativeHandle(ref, () => ({
-        
+
         openMenu() {
-            setNavMenuClasses([classes.menu, classes.opened]);
+            setNavMenuClasses([classes.navMenu, classes.opened]);
         }
 
     }));
-    
+
 
     function closeMenu() {
-        setNavMenuClasses([classes.menu]);
+        setNavMenuClasses([classes.navMenu]);
     }
 
     return <div className={navMenuClasses.join(' ')}>
-        <FaTimes className={classes.closeBtn} onClick={closeMenu}/>
-        <Link className={classes.navItem} onClick={closeMenu}   to='/gallery'>Image Gallery</Link>
+        <FaTimes className={classes.closeBtn} onClick={closeMenu} />
+        <Link className={classes.navItem} onClick={closeMenu} to='/gallery'>Image Gallery</Link>
         <Link className={classes.navItem} to='/info'>About Me</Link>
     </div>
 }

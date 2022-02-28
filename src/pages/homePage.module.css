@@ -3,7 +3,7 @@
     display: flex;
     flex-flow: column;
     height: 100%;
-    min-height: 90vh;
+    min-height: calc(100vh - 46px - 1rem);
     background-size:contain;
     background-color: rgb(186, 186, 186);
     background-blend-mode:lighten;
