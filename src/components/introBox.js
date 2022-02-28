@@ -1,15 +1,18 @@
 import classes from './introBox.module.css'
 import input from '../documents/intro.txt';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function IntroBox() {
     const [text, setText] = useState([]);
 
-    fetch(input)
-        .then(data => data.text())
-        .then(txt => {
-            setText([txt])
-        })
+    useEffect(() =>{
+        fetch(input)
+            .then(data => data.text())
+            .then(txt => {
+                setText([txt])
+            })       
+        }, []
+    )
 
     return <div className={classes.intro}>
         <h1 className={classes.title}>Hello There!</h1>
