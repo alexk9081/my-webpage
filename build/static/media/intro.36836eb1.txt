@@ -1,1 +1,0 @@
-Hello there! My name is Alex and this is my webpage I built using React.js.

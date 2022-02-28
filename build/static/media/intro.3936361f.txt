@@ -1,0 +1,5 @@
+    My name is Alex and this is a webpage that I built using React.js and hosted on github pages. This webpage is a place dedicated to displaying working examples of the projects that I create. This is currently an active project so some pages may be stilll a work in progess.
+    This project was started on February 12th and was built from scratch independently. I have prior experience using vanilla javascript so the biggest hurdle with this project was understanding react components and hooks. Overall, it's been an enjoyable project to create as it has helped me learn a lot more about javascript with things such as promises and it has also helped give me more clarity on functional programming.
+
+Link to the repository for this page can be found here:
+github.com/alexk9081/my-webpage
