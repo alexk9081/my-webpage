@@ -21,8 +21,10 @@ function NavMenu(props, ref) {
 
     return <div className={navMenuClasses.join(' ')}>
         <FaTimes className={classes.closeBtn} onClick={closeMenu} />
+        {/* <Link className={classes.navItem} onClick={closeMenu} to='/test'>Test Page</Link> */}
+        <Link className={classes.navItem} onClick={closeMenu} to='/data'>Add Information</Link>
         <Link className={classes.navItem} onClick={closeMenu} to='/gallery'>Image Gallery</Link>
-        <Link className={classes.navItem} to='/info'>About Me</Link>
+        <Link className={classes.navItem} onClick={closeMenu} to='/info'>About Me</Link>
     </div>
 }
 

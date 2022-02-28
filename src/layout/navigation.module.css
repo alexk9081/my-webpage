@@ -26,10 +26,12 @@
     border-color: black;
 }
 
+
 .mobileMenuButton {
     display: none;
     color: white;
 }
+
 .mobileMenuButton:hover {
     transition: all 0.3s ease;
     background-color: rgb(39, 39, 39);
@@ -43,10 +45,22 @@
     right: 50%;
     transform: translate(0, 60%);
     font-size: 1.8rem;
-    /* display: none; */
 }
 
-@media screen and (max-width: 850px) {
+.homeIcon{
+    color: white;
+    font-size: 1.3rem;
+    transform: translate(0, 23%);
+    margin-right: .3rem;
+}
+
+@media only screen and (min-width: 764px) and (max-width: 1250px) {
+    .logo {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 764px) {
     .mobileMenuButton {
         display: block;
         position: absolute;
@@ -61,13 +75,4 @@
     .navList {
         display: none;
     }
-    /* .logo {
-        color: white;
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 50%;
-        transform: translate(0, 60%);
-        font-size: 1.8rem;
-    } */
 }

@@ -1,13 +1,15 @@
 import IntroBox from "../components/introBox";
 import classes from "./homePage.module.css"
-// import BlogPost from "../components/blogPost.js";
+import BlogPost from "../components/blogPost.js";
 
 function HomePage() {
     return <div className={classes.home}>
         <main>
             <IntroBox />
             <section>
-                {/* <BlogPost /> */}
+                <BlogPost />
+                <BlogPost />
+                <BlogPost />
             </section>
         </main>
     </div>

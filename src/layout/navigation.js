@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import classes from './navigation.module.css';
-import { FaBars, FaRocket } from 'react-icons/fa';
+import { FaBars, FaRocket, FaHome } from 'react-icons/fa';
 import { useRef } from 'react';
 import NavMenu from './navMenu';
 
@@ -13,14 +13,15 @@ function NavigationBar() {
 
     return <nav className={classes.navBar}>
         <div>
-            <Link className={classes.navItem} to='/my-webpage/'>Home</Link>
+            
+            <Link className={classes.navItem} to='/my-webpage/'> <FaHome className={classes.homeIcon} />Home</Link>
         </div>
 
         <FaRocket className={classes.logo} />
         
         <div className={classes.navList}>
             {/* <Link className={classes.navItem} to='/test'>Test Page</Link> */}
-            {/* <Link className={classes.navItem} to='/data'>Add Information</Link> */}
+            <Link className={classes.navItem} to='/data'>Add Information</Link>
             <Link className={classes.navItem} to='/gallery'>Image Gallery</Link>
             <Link className={classes.navItem} to='/info'>About Me</Link>
         </div>
