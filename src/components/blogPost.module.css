@@ -1,8 +1,10 @@
-.post {
-    background-color: gray;
+.post,
+.text,
+.date {
+    font-family: "Open Sans", sans-serif;
 }
 
-.body {
+.post {
     color: black;
     margin: 3%;
     padding: 0.5rem;
@@ -17,6 +19,23 @@
 .text {
     margin: 0%;
     font-weight: bolder;
-    font-family:'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
-    white-space: pre-wrap;       
+    font-family: 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+    white-space: pre-wrap;
+}
+
+.title, .date {
+    display: inline-block;
+}
+
+.date{
+    float: right;
+}
+
+.sect {
+    width: 100%;
+
+    /* background-color: aliceblue;
+    border-color: black;
+    border: 0.1rem;
+    border-style: solid; */
 }

@@ -10,6 +10,8 @@ function HomePage() {
                 <BlogPost />
                 <BlogPost />
                 <BlogPost />
+                <BlogPost />
+                <BlogPost />
             </section>
         </main>
     </div>

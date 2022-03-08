@@ -20,7 +20,7 @@ function NavigationBar() {
         <FaRocket className={classes.logo} />
         
         <div className={classes.navList}>
-            {/* <Link className={classes.navItem} to='/test'>Test Page</Link> */}
+            <Link className={classes.navItem} to='/test'>Test Page</Link>
             <Link className={classes.navItem} to='/data'>Add Information</Link>
             <Link className={classes.navItem} to='/gallery'>Image Gallery</Link>
             <Link className={classes.navItem} to='/info'>About Me</Link>
