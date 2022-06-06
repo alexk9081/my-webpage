@@ -1,5 +1,6 @@
 .home {
-    background-image: url("https://wallpapercave.com/wp/wp9333941.jpg");
+    /* background-image: url("https://wallpapercave.com/wp/wp9333941.jpg"); */
+    background-color: gray;
     display: flex;
     flex-flow: column;
     height: 100%;

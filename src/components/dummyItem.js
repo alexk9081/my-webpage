@@ -2,12 +2,12 @@ import classes from './dummyItem.module.css';
 
 function DummyItem(props) {
     return <div className={classes.item}>
-        Hello third
-        <h1> THis is a test div</h1>
+        DummyItem component
+        <h1> This is a test div</h1>
         <ul>
-            <li> Hello </li>
-            <li> goodbye</li>
-            <li>Maybe??</li>
+            <li>Hello 1</li>
+            <li>Hello 2</li>
+            <li>Hello 3</li>
         </ul>
     </div>
 }

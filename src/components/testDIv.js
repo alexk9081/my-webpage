@@ -2,8 +2,7 @@
 function TestDiv() {
 
     return <div>
-        Hello This is
-        A Test
+        Hello this is the TestDiv component
     </div>;
 }
 

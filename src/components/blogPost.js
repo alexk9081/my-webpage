@@ -7,17 +7,33 @@ function BlogPost(props) {
         const day = date.getDate();
         const month = date.getMonth() + 1;
         const year = date.getFullYear();
-        const hours = date.getHours();
-        const minutes = date.getMinutes();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
 
+        //Convert minutes and hours to am/pm
+        let ampm = "am";
+        if (hours > 12) {
+            ampm = "pm";
+            hours -= 12;
+        }
+        if (hours === 0) {
+            hours = 12;
+        }
+
+        //Convert minutes to double digits
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+
+        //Convert month into name
         const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         const monthName = monthNames[month - 1];
 
-        return `${monthName} ${day}, ${year} ${hours}:${minutes}`;
+        return `${monthName} ${day}, ${year} @ ${hours}:${minutes} ${ampm}`;
     }
 
     return <div className={classes.post}>
-        <h2 className={classes.title}>
+        <h2  className={classes.title}>
             Lorem Ipsum Dolor
         </h2>
         <h3 className={classes.date}>
