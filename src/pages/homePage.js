@@ -4,7 +4,7 @@ import BlogPost from "../components/blogPost.js";
 
 function HomePage() {
     return <div className={classes.home}>
-        <main>
+        <main className={classes.mainContent}>
             <IntroBox />
             <section>
                 <BlogPost />

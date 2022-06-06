@@ -9,3 +9,7 @@
     /* background-color: rgb(186, 186, 186);
     background-blend-mode:lighten; */
 }
+
+.mainContent{
+    margin: 2rem 12rem 0rem 12rem;
+}

@@ -1,0 +1,11 @@
+.profileInfo{
+    text-align: center;
+}
+
+.profileImg{
+    margin: 10px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 200px;
+}
