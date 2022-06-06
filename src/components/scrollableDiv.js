@@ -1,7 +1,7 @@
 import DummyItem from './dummyItem';
 import classes from './scrollableDiv.module.css';
 
-function ScrollableDiv(props) {
+function ScrollableDiv() {
     return <div className={classes.viewBox}>
         This is the ScrollableDiv component.
         <DummyItem></DummyItem>

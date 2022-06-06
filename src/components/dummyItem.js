@@ -1,6 +1,6 @@
 import classes from './dummyItem.module.css';
 
-function DummyItem(props) {
+function DummyItem() {
     return <div className={classes.item}>
         DummyItem component
         <h1> This is a test div</h1>
