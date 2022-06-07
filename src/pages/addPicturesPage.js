@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import axios from 'axios';
 
 function AddPicture() {
     const [selectedFile, setSelectedFile] = useState(null);
@@ -19,10 +18,6 @@ function AddPicture() {
             selectedFile,
             selectedFile.name
         );
-
-        // Request made to the backend api
-        // Send formData object
-        axios.post("api/uploadfile", formData);
     };
 
     // File content to be displayed after

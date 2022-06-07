@@ -1,6 +1,6 @@
 import classes from './blogPost.module.css';
 
-function BlogPost(props) {
+function BlogPost() {
 
     function getCurrentTimeAndDate() {
         const date = new Date();
