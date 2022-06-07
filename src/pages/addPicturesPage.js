@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import axios from 'axios';
 
 function AddPicture() {
     const [selectedFile, setSelectedFile] = useState(null);
@@ -15,9 +15,9 @@ function AddPicture() {
 
         // Update the formData object
         formData.append(
-            "myFile",
-            this.state.selectedFile,
-            this.state.selectedFile.name
+            "uploadedImage",
+            selectedFile,
+            selectedFile.name
         );
 
         // Request made to the backend api
@@ -28,15 +28,15 @@ function AddPicture() {
     // File content to be displayed after
     // file upload is complete
     let fileData = () => {
-        if (this.state.selectedFile) {
+        if (selectedFile) {
             return (
                 <div>
                     <h2>File Details:</h2>
-                    <p>File Name: {this.state.selectedFile.name}</p>
-                    <p>File Type: {this.state.selectedFile.type}</p>
+                    <p>File Name: {selectedFile.name}</p>
+                    <p>File Type: {selectedFile.type}</p>
                     <p>
                         Last Modified:{" "}
-                        {this.state.selectedFile.lastModifiedDate.toDateString()}
+                        {selectedFile.lastModifiedDate.toDateString()}
                     </p>
                 </div>
             );
@@ -55,12 +55,12 @@ function AddPicture() {
             File Upload using React!
         </h3>
         <div>
-            <input type="file" onChange={this.onFileChange} />
-            <button onClick={this.onFileUpload}>
+            <input type="file" accept=".mov,.png,.jpg,.jpeg" onChange={onFileChange} />
+            <button onClick={onFileUpload}>
                 Upload!
             </button>
         </div>
-        {this.fileData()}
+        {fileData()}
     </div>
 }
 

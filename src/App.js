@@ -4,6 +4,7 @@ import GalleryPage from './pages/photoGallery';
 import HomePage from './pages/homePage';
 import ProjectInfoPage from './pages/aboutMePage';
 import AddInfo from './pages/addInfoPage';
+import AddPicture from './pages/addPicturesPage';
 import TestPage from './pages/testPage';
 
 
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path='/info'>
           <ProjectInfoPage />
+        </Route>
+        <Route path='/photo'>
+          <AddPicture />
         </Route>
         <Route path='/data'>
           <AddInfo />
