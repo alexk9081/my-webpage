@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import classes from "./addPicturesPage.module.css";
 
 function AddPicture() {
     const [selectedFile, setSelectedFile] = useState(null);
@@ -26,10 +27,10 @@ function AddPicture() {
         if (selectedFile) {
             return (
                 <div>
-                    <h2>File Details:</h2>
-                    <p>File Name: {selectedFile.name}</p>
-                    <p>File Type: {selectedFile.type}</p>
-                    <p>
+                    <h2 className={classes.general}>File Details:</h2>
+                    <p className={classes.general}>File Name: {selectedFile.name}</p>
+                    <p className={classes.general}>File Type: {selectedFile.type}</p>
+                    <p className={classes.general}>
                         Last Modified:{" "}
                         {selectedFile.lastModifiedDate.toDateString()}
                     </p>
@@ -39,19 +40,19 @@ function AddPicture() {
             return (
                 <div>
                     <br />
-                    <h4>Choose before Pressing the Upload button</h4>
+                    <h4 className={classes.general}>Choose before Pressing the Upload button</h4>
                 </div>
             );
         }
     };
 
     return <div>
-        <h3>
-            File Upload using React!
+        <h3 className={classes.title}>
+            File Upload
         </h3>
-        <div>
-            <input type="file" accept=".mov,.png,.jpg,.jpeg" onChange={onFileChange} />
-            <button onClick={onFileUpload}>
+        <div className={classes.uploadItems}>
+            <input type="file" accept=".mov,.png,.jpg,.jpeg" onChange={onFileChange} className={classes.fileUpload}/>
+            <button onClick={onFileUpload} className={classes.button}>
                 Upload!
             </button>
         </div>

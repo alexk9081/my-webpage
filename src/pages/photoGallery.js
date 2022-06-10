@@ -8,7 +8,7 @@ import { ref, getDownloadURL, listAll } from "firebase/storage";
 
 import { storage } from "../firebaseConfig";
 
-function GalleryPage() {
+function PhotoGallery() {
     const [isLoading, setIsLoading] = useState(true);
 
     const [firstPicElements, setFirstPicElements] = useState([]);
@@ -90,4 +90,4 @@ function GalleryPage() {
     </div>
 }
 
-export default GalleryPage;
+export default PhotoGallery;
