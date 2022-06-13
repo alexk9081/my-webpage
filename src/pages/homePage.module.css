@@ -1,5 +1,5 @@
 .home {
-    background-color: #393E46;
+    background-color: #ffffff;
     display: flex;
     flex-flow: column;
     height: 100%;
@@ -9,9 +9,9 @@
 
 .mainContent{
     justify-content: center;
-    background-color: #EEEEEE;
+    background-color: #1a1c25;
     padding-top: 2rem;
-    width: 760px;
+    width: 70vw;
     height: calc(100vh - 3.6rem - 40px);
     overflow-y: scroll;
 }

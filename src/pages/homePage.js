@@ -1,15 +1,19 @@
 import IntroBox from "../components/introBox";
 import classes from "./homePage.module.css"
 import BlogPost from "../components/blogPost.js";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function HomePage() {
     const hidingContent = useRef(null);
     const scrollingContent = useRef(null);
+    const [pageResize, setPageResize] = useState(null);
+
+    window.addEventListener("resize", setPageResize);
 
     useEffect(() => {
+        console.log("reloaded");
         hidingContent.current.style.width = scrollingContent.current.clientWidth + "px";
-    }, []);
+    }, [pageResize]);
 
 
     return <div className={classes.home}>
