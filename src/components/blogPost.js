@@ -25,7 +25,7 @@ function BlogPost() {
             minutes = "0" + minutes;
         }
 
-        //Convert month into name
+        //Convert month number into name
         const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         const monthName = monthNames[month - 1];
 

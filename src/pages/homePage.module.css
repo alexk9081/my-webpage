@@ -1,13 +1,10 @@
 .home {
-    /* background-image: url("https://wallpapercave.com/wp/wp9333941.jpg"); */
     background-color: #393E46;
     display: flex;
     flex-flow: column;
     height: 100%;
     height: calc(100vh - 40px - 1.6rem);
     background-size:contain;
-    /* background-color: rgb(186, 186, 186);
-    background-blend-mode:lighten; */
 }
 
 .mainContent{
@@ -24,12 +21,3 @@
     overflow: hidden;
     width: 760px;
 }
-
-/* @media only screen and (max-width: 764px) {
-    .mainContent{
-        width: 500px;
-    }
-    .hiderDiv{
-        width: 500px
-    }
-} */

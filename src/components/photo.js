@@ -7,7 +7,7 @@ function Photo(props) {
         currentTarget.style = "display: none";
     }
 
-    return <img className={classes.photoImg} src={props.src} alt="Maria and Alex" onError={errorHandler} />
+    return <img className={classes.photoImg} src={props.src} alt={props.alt} onError={errorHandler} />
 }
 
 export default Photo;

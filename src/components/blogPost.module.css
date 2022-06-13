@@ -11,9 +11,6 @@
     background-color: white;
     border-radius: 8px;
     white-space: pre-line;
-    /* border-color: black;
-    border: 0.1rem;
-    border-style: solid; */
 }
 
 .text {
@@ -24,14 +21,8 @@
 }
 
 .title, .date {
-    /* display: inline-block; */
-    /* center title */
     text-align: center;
 }
-/* 
-.date{
-    float: right;
-} */
 
 .sectionBreak{
     margin:  2% 2rem 3% 2rem;

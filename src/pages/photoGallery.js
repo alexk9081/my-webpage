@@ -46,7 +46,7 @@ function PhotoGallery() {
                 const promise = allPromises[i];
 
                 promise.then((url) => {
-                    const mappedComponent = <Photo key={url} src={url} onLoad={pageController()} />;
+                    const mappedComponent = <Photo key={url} src={url} alt="Alex and Maria" onLoad={pageController()} />;
                     if (i % 3 === 0) {
                         setFirstPicElements(oldArray => [...oldArray, mappedComponent]);
                     }

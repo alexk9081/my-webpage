@@ -1,7 +1,7 @@
 import { forwardRef, useState, useImperativeHandle } from 'react';
 import { Link } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
-import classes from './navMenu.module.css';
+import classes from './mobileNavMenu.module.css';
 
 function NavMenu(props, ref) {
     const [navMenuClasses, setNavMenuClasses] = useState([classes.navMenu]);

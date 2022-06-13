@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import classes from './navigation.module.css';
 import { FaBars, FaRocket, FaHome } from 'react-icons/fa';
 import { useRef } from 'react';
-import NavMenu from './navMenu';
+import NavMenu from './mobileNavMenu';
 
 function NavigationBar() {
     const childRef = useRef();

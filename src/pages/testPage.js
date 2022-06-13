@@ -1,6 +1,5 @@
 import TestDiv from "../components/testDIv";
-import PostForm from '../components/arrangements/postForm.js';
-import ScrollableDiv from "../components/scrollableDiv";
+import PostForm from '../components/arrangements/blogPostForm.js';
 
 function TestPage() {
     return <div>
@@ -8,8 +7,6 @@ function TestPage() {
         <TestDiv></TestDiv>
 
         <PostForm />
-
-        <ScrollableDiv></ScrollableDiv>
     </div>
 }
 
