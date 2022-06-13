@@ -1,11 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import classes from "./addPicturesPage.module.css";
 import { ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../firebaseConfig"
 
 function AddPicture() {
     const [selectedFile, setSelectedFile] = useState(null);
+    const [preview, setPreview] = useState();
 
+    useEffect(() => {
+        if (!selectedFile) {
+            setPreview(undefined);
+            return;
+        };
+
+        const objectUrl = URL.createObjectURL(selectedFile);
+        setPreview(objectUrl);
+
+        // free memory when ever this component is unmounted
+        return () => URL.revokeObjectURL(objectUrl);
+    }, [selectedFile]);
 
     let onFileChange = event => {
         // Update the state
@@ -28,13 +41,12 @@ function AddPicture() {
             (snapshot) => {
                 // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
                 const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                console.log('Upload is ' + progress + '% done');
+                console.log('Upload is ' + progress.toFixed(2) + '% done');
                 switch (snapshot.state) {
                     case 'paused':
                         console.log('Upload is paused');
                         break;
                     case 'running':
-                        console.log('Upload is running');
                         break;
                     default:
                         console.log("An error occured");
@@ -60,17 +72,21 @@ function AddPicture() {
         );
     };
 
-    // File content to be displayed after
-    // file upload is complete
+    // File information to be displayed after file upload is complete
     let fileData = () => {
         if (selectedFile) {
             return (
-                <div>
-                    <h2 className={classes.general}>File Details:</h2>
-                    <p className={classes.general}>File Name: {selectedFile.name}</p>
-                    <p className={classes.general}>File Type: {selectedFile.type}</p>
-                    <p className={classes.general}>Last Modified: {selectedFile.lastModifiedDate.toDateString()}</p>
-                </div>
+                <>
+                    <div className={classes.general}>
+                        {selectedFile &&  <img src={preview} alt="Preview" className={classes.previewImg} /> }
+                    </div>
+                    <div>
+                        <h2 className={classes.general}>File Details:</h2>
+                        <p className={classes.general}>File Name: {selectedFile.name}</p>
+                        <p className={classes.general}>File Type: {selectedFile.type}</p>
+                        <p className={classes.general}>Last Modified: {selectedFile.lastModifiedDate.toDateString()}</p>
+                    </div>
+                </>
             );
         } else {
             return (
