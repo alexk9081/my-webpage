@@ -6,31 +6,20 @@ import ProjectInfoPage from './pages/aboutMePage';
 import AddInfo from './pages/addInfoPage';
 import AddPicture from './pages/addPicturesPage';
 import TestPage from './pages/testPage';
-
+import Login from './pages/loginPage';
 
 function App() {
   return (
     <div>
       <NavigationBar />
       <Switch>
-        <Route path='/my-webpage/'>
-          <HomePage />
-        </Route>
-        <Route path='/gallery'>
-          <GalleryPage />
-        </Route>
-        <Route path='/info'>
-          <ProjectInfoPage />
-        </Route>
-        <Route path='/photo'>
-          <AddPicture />
-        </Route>
-        <Route path='/data'>
-          <AddInfo />
-        </Route>
-        <Route path='/test'>
-          <TestPage />
-        </Route>
+        <Route path='/my-webpage' component={HomePage} />
+        <Route path='/gallery' component={GalleryPage} />
+        <Route path='/info' component={ProjectInfoPage} />
+        <Route path='/login' component={Login} />
+        <Route path='/photo' component={AddPicture} />
+        <Route path='/data' component={AddInfo} />
+        <Route path='/test' component={TestPage} />
       </Switch>
     </div>
   );

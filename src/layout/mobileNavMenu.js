@@ -7,11 +7,9 @@ function NavMenu(props, ref) {
     const [navMenuClasses, setNavMenuClasses] = useState([classes.navMenu]);
 
     useImperativeHandle(ref, () => ({
-
         openMenu() {
             setNavMenuClasses([classes.navMenu, classes.opened]);
         }
-
     }));
 
 
