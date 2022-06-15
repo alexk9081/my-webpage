@@ -9,3 +9,35 @@
     border-color: black;
     border-radius: 200px;
 }
+
+.profileHyperLink{
+    border: 1px;
+    border-color: black;
+    border-style: dashed;
+    text-decoration: none;
+}
+
+.profileLinks{
+    margin: 1rem;
+}
+
+.profileText{
+    margin: 0px;
+}
+
+.profileLink:visited{
+    color: blue;
+}
+
+.profileLink:link{
+    color: blue;
+
+}
+
+.profileLink:hover{
+    color: rgb(87, 87, 255);
+}
+
+.profileLink:active{
+    color: rgb(0, 0, 178);
+}
