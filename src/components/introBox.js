@@ -1,6 +1,6 @@
-import classes from './introBox.module.css'
-import input from '../documents/intro.txt';
-import { useEffect, useState } from 'react';
+import classes from "./introBox.module.css";
+import input from "../documents/intro.txt";
+import { useEffect, useState } from "react";
 
 function IntroBox() {
     const [text, setText] = useState([]);

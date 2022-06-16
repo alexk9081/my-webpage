@@ -1,5 +1,5 @@
 import IntroBox from "../components/introBox";
-import classes from "./homePage.module.css"
+import classes from "./homePage.module.css";
 import BlogPost from "../components/blogPost.js";
 import { useEffect, useRef, useState } from "react";
 
@@ -11,7 +11,6 @@ function HomePage() {
     window.addEventListener("resize", setPageResize);
 
     useEffect(() => {
-        console.log("reloaded");
         hidingContent.current.style.width = scrollingContent.current.clientWidth + "px";
     }, [pageResize]);
 

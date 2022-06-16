@@ -1,4 +1,4 @@
-import classes from './photoColumn.module.css';
+import classes from "./photoColumn.module.css";
 
 function PhotoColumn(props) {
 

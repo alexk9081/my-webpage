@@ -1,11 +1,8 @@
 import PhotoColumn from "../components/photoColumn";
-import Photo from '../components/photo.js'
-import classes from './photoGallery.module.css';
-
-import { useState, useEffect, useRef } from 'react';
-
+import Photo from "../components/photo.js"
+import classes from "./photoGallery.module.css";
+import { useState, useEffect, useRef } from "react";
 import { ref, getDownloadURL, listAll } from "firebase/storage";
-
 import { storage } from "../firebaseConfig";
 
 function PhotoGallery() {

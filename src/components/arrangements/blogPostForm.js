@@ -1,5 +1,5 @@
-import Input from '../inputBox'
-import classes from './blogPostForm.module.css';
+import Input from "../inputBox";
+import classes from "./blogPostForm.module.css";
 
 function PostForm() {
     function getInputsFromForm(){

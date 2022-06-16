@@ -1,6 +1,6 @@
-import classes from "./loginPage.module.css"
-import { auth, provider } from "../firebaseConfig"
-import { signInWithRedirect, signOut } from "firebase/auth"
+import classes from "./loginPage.module.css";
+import { auth, provider } from "../firebaseConfig";
+import { signInWithRedirect, signOut } from "firebase/auth";
 
 function Login() {
     let googleLogin = () => {

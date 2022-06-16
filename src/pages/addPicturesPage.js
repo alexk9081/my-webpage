@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import classes from "./addPicturesPage.module.css";
 import { ref, uploadBytesResumable } from "firebase/storage";
-import { storage } from "../firebaseConfig"
+import { storage } from "../firebaseConfig";
 
 function AddPicture() {
     const [selectedFile, setSelectedFile] = useState(null);
