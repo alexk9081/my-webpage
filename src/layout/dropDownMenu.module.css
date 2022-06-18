@@ -1,0 +1,13 @@
+.DropdownMenu{
+    background-color: none;
+    color: white;
+    /* margin: 15px; */
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.DropdownMenu:hover{
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgb(39, 39, 39);
+}
