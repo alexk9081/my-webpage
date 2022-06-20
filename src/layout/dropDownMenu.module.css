@@ -4,10 +4,32 @@
     /* margin: 15px; */
     padding: 10px;
     border-radius: 4px;
+
+    display: block;
+    position: absolute;
+    top: -2.5%;
+    right: 2%;
+    transform: translate(0, 60%);
+    font-size: 1.7rem;
 }
 
 .DropdownMenu:hover{
     cursor: pointer;
     transition: all 0.3s ease;
     background-color: rgb(39, 39, 39);
+}
+
+.itemHolder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+
+    background-color: gray;
+
+    position: absolute;
+    top: 58px;
+    width: 300px;
+    transform: translate(-100%);
 }

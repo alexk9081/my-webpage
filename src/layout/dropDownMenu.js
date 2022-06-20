@@ -8,7 +8,9 @@ function DropdownMenu(props) {
     return <>
         <FaAngleDoubleDown className={classes.DropdownMenu} onClick={() => {setOpen(!open)}} />
         
-        {open && props.children}
+        <div className={classes.itemHolder}>
+            {open && props.children}
+        </div>
     </>
 };
 

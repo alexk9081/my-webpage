@@ -28,11 +28,11 @@ function NavigationBar() {
         <div className={classes.navList}>
             <DropdownMenu>
                 {/* <Link className={classes.navItem} to='/test'>Test Page</Link> */}
-                <Link className={classes.navItem} to='/login'>Login-Logout</Link>
-                <Link className={classes.navItem} to='/photo'>Add Photo</Link>
-                <Link className={classes.navItem} to='/data'>Add Information</Link>
-                <Link className={classes.navItem} to='/gallery'>Image Gallery</Link>
-                <Link className={classes.navItem} to='/info'>About Me</Link>
+                <Link className={classes.menuItem} to='/login'>Login-Logout</Link>
+                <Link className={classes.menuItem} to='/photo'>Add Photo</Link>
+                <Link className={classes.menuItem} to='/data'>Add Information</Link>
+                <Link className={classes.menuItem} to='/gallery'>Image Gallery</Link>
+                <Link className={classes.menuItem} to='/info'>About Me</Link>
             </DropdownMenu>
         </div>
         

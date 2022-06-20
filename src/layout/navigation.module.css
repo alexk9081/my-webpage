@@ -5,6 +5,18 @@
     justify-content: space-between;
 }
 
+.menuItem{
+    width: 260px;
+    font-weight: 800;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
 .navItem {
     font-weight: 800;
     font-family: "Open Sans", sans-serif;
