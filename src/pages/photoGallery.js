@@ -1,6 +1,6 @@
-import PhotoColumn from "../components/photoColumn";
-import Photo from "../components/photo.js"
-import classes from "./photoGallery.module.css";
+import PhotoColumn from "../components/PhotoColumn";
+import Photo from "../components/Photo.js"
+import classes from "./PhotoGallery.module.css";
 import { useState, useEffect, useRef } from "react";
 import { ref, getDownloadURL, listAll } from "firebase/storage";
 import { storage } from "../firebaseConfig";

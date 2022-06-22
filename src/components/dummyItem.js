@@ -1,4 +1,4 @@
-import classes from "./dummyItem.module.css";
+import classes from "./DummyItem.module.css";
 
 function DummyItem() {
     return <div className={classes.item}>

@@ -1,7 +1,7 @@
-import Input from "../inputBox";
-import classes from "./blogPostForm.module.css";
+import InputBox from "../InputBox";
+import classes from "./BlogPostForm.module.css";
 
-function PostForm() {
+function BlogPostForm() {
     function getInputsFromForm(){
         console.log("getInputsFromForm");
         const inputs = document.querySelectorAll(`.post`);
@@ -16,12 +16,12 @@ function PostForm() {
 
     return <div className={classes.form}>
         <form className={classes.post}>
-            <Input className="input" id="title" label="Title" placeHolder="My First Post" />
-            <Input className="input" id="description" label="Description" placeHolder="I did this today." />
-            <Input className="input" id="user" label="Username" placeHolder="KeoA" />
+            <InputBox className="input" id="title" label="Title" placeHolder="My First Post" />
+            <InputBox className="input" id="description" label="Description" placeHolder="I did this today." />
+            <InputBox className="input" id="user" label="Username" placeHolder="KeoA" />
         </form>
         <button className={classes.submit} onClick={getInputsFromForm}>Submit</button>
     </div>
 }
 
-export default PostForm;
+export default BlogPostForm;

@@ -1,5 +1,5 @@
-import TestDiv from "../components/testDIv";
-import PostForm from "../components/arrangements/blogPostForm.js";
+import TestDiv from "../components/TestDiv";
+import PostForm from "../components/arrangements/BlogPostForm.js";
 import { useState } from "react";
 
 function TestPage() {

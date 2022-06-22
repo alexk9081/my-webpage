@@ -1,4 +1,4 @@
-import classes from "./aboutMePage.module.css";
+import classes from "./AboutMePage.module.css";
 
 function ProjectInfoPage() {
     return <div className={classes.profileInfo}>

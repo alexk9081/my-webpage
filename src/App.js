@@ -1,13 +1,13 @@
 import { Route, Switch } from "react-router-dom";
-import ProtectedRoute from "./components/protectedRoute";
-import NavigationBar from "./layout/navigation";
-import GalleryPage from "./pages/photoGallery";
-import HomePage from "./pages/homePage";
-import ProjectInfoPage from "./pages/aboutMePage";
-import AddInfo from "./pages/addInfoPage";
-import AddPicture from "./pages/addPicturesPage";
-import TestPage from "./pages/testPage";
-import Login from "./pages/loginPage";
+import ProtectedRoute from "./components/ProtectedRoute";
+import NavigationBar from "./layout/Navigation";
+import GalleryPage from "./pages/PhotoGallery";
+import HomePage from "./pages/HomePage";
+import ProjectInfoPage from "./pages/AboutMePage";
+import AddInfo from "./pages/AddInfoPage";
+import AddPicture from "./pages/AddPicturesPage";
+import TestPage from "./pages/TestPage";
+import Login from "./pages/LoginPage";
 
 function App() {
   return (

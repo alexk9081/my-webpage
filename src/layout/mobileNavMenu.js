@@ -1,9 +1,9 @@
 import { forwardRef, useState, useImperativeHandle } from "react";
 import { Link } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
-import classes from "./mobileNavMenu.module.css";
+import classes from "./MobileNavMenu.module.css";
 
-function NavMenu(_props, ref) {
+function MobileNavMenu(_props, ref) {
     const [navMenuClasses, setNavMenuClasses] = useState([classes.navMenu]);
 
     useImperativeHandle(ref, () => ({
@@ -26,6 +26,6 @@ function NavMenu(_props, ref) {
     </div>
 }
 
-const forwardedChild = forwardRef(NavMenu);
+const forwardedChild = forwardRef(MobileNavMenu);
 
 export default forwardedChild;

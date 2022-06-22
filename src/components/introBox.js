@@ -1,4 +1,4 @@
-import classes from "./introBox.module.css";
+import classes from "./IntroBox.module.css";
 import input from "../documents/intro.txt";
 import { useEffect, useState } from "react";
 

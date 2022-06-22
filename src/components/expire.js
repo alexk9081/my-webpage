@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import classes from "./expire.module.css";
+import classes from "./Expire.module.css";
 
 function Expire(props) {
     const [visible, setVisible] = useState(true);

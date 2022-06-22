@@ -1,6 +1,6 @@
-import classes from "./inputBox.module.css";
+import classes from "./InputBox.module.css";
 
-function Input(props) {
+function InputBox(props) {
     return <div>
         <label className={classes.inputName}><b>{props.label}: </b></label> 
         <br/>
@@ -8,4 +8,4 @@ function Input(props) {
     </div>
 }
 
-export default Input;
+export default InputBox;

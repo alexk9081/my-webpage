@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import classes from "./addPicturesPage.module.css";
+import classes from "./AddPicturesPage.module.css";
 import { ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../firebaseConfig";
 

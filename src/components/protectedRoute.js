@@ -1,6 +1,6 @@
 import { Route, Redirect } from "react-router-dom";
 import { auth } from "../firebaseConfig";
-import Expire from "./expire";
+import Expire from "./Expire";
 
 
 function ProtectedRoute({ component: Component, ...rest }) {

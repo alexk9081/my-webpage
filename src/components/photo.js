@@ -1,4 +1,4 @@
-import classes from "./photo.module.css";
+import classes from "./Photo.module.css";
 
 function Photo(props) {
 

@@ -1,6 +1,6 @@
-import IntroBox from "../components/introBox";
-import classes from "./homePage.module.css";
-import BlogPost from "../components/blogPost.js";
+import IntroBox from "../components/IntroBox";
+import classes from "./HomePage.module.css";
+import BlogPost from "../components/BlogPost.js";
 import { useEffect, useRef, useState } from "react";
 
 function HomePage() {

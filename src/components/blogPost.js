@@ -1,4 +1,4 @@
-import classes from "./blogPost.module.css";
+import classes from "./BlogPost.module.css";
 
 function BlogPost() {
 

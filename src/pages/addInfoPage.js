@@ -1,4 +1,4 @@
-import PostForm from "../components/arrangements/blogPostForm.js";
+import PostForm from "../components/arrangements/BlogPostForm.js";
 
 function AddInfo() {
     return <div>

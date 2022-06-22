@@ -1,4 +1,4 @@
-import classes from "./loginPage.module.css";
+import classes from "./LoginPage.module.css";
 import { auth, provider } from "../firebaseConfig";
 import { signInWithRedirect, signOut } from "firebase/auth";
 

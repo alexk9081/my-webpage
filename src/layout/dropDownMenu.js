@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaAngleDoubleDown, FaAngleDoubleUp } from "react-icons/fa";
-import classes from "./dropDownMenu.module.css";
+import classes from "./DropdownMenu.module.css";
 
 function DropdownMenu(props) {
     const [open, setOpen] = useState(false);
