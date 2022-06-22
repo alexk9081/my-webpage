@@ -15,7 +15,7 @@ function NavigationBar() {
     return <nav className={classes.navBar}>
         {/* Left home button */}
         <div>
-            <Link className={classes.navItem} to='/my-webpage/'>
+            <Link className={classes.homeNav} to='/my-webpage/'>
                 <FaHome className={classes.homeIcon} />
                 Home
             </Link>
