@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import classes from "./Navigation.module.css";
+import classes from "./NavigationBar.module.css";
 import { FaBars, FaRocket, FaHome } from "react-icons/fa";
 import { useRef } from "react";
 import NavMenu from "./MobileNavMenu";
 import DropdownMenu from "./DropdownMenu";
 
-function NavigationBar() {
+function NavigationBar(props) {
     const childRef = useRef();
 
     function showNavMenu() {
@@ -29,7 +29,7 @@ function NavigationBar() {
             <DropdownMenu>
                 {/* <Link className={classes.navItem} to='/test'>Test Page</Link> */}
                 <Link className={classes.menuItem} to='/login'>Login-Logout</Link>
-                <Link className={classes.menuItem} to='/photo'>Add Photo</Link>
+                {props.loginState && <Link className={classes.menuItem} to='/photo'>Add Photo</Link>}
                 <Link className={classes.menuItem} to='/data'>Add Information</Link>
                 <Link className={classes.menuItem} to='/gallery'>Image Gallery</Link>
                 <Link className={classes.menuItem} to='/info'>About Me</Link>

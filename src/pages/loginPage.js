@@ -1,11 +1,9 @@
 import classes from "./LoginPage.module.css";
 import { auth, provider } from "../firebaseConfig";
 import { signInWithRedirect, signOut } from "firebase/auth";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
-function Login() {
-    const [loggedIn, setLoggedIn] = useState(false);
-
+function LoginPage(props) {
     let googleLogin = () => {
         console.log("clicked");
         signInWithRedirect(auth, provider);
@@ -32,18 +30,18 @@ function Login() {
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
             if (user) {
-                setLoggedIn(true);
+                props.setLoginState(true);
             } else {
-                setLoggedIn(false);
+                props.setLoginState(false);
             }
         });
 
         // Cleanup subscription on unmount
         return () => unsubscribe();
-    }, []);
-
+    }, [props]);
+    
     return <div>
-        {loggedIn ?
+        {props.loginState ?
             <>
                 <h1 className={classes.general}>Google sign-out</h1>
                 <button onClick={googleLogout}>Logout with Google</button>
@@ -60,4 +58,4 @@ function Login() {
     </div>
 }
 
-export default Login;
+export default LoginPage;
