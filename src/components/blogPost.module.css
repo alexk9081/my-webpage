@@ -5,12 +5,20 @@
 }
 
 .post {
-    color: black;
+    color: white;
     margin: 3%;
-    padding: 0.5rem;
-    background-color: white;
+    padding: 0.5rem 0.5rem 0rem 0.5rem;
+    background-color: #1a1c25;
     border-radius: 8px;
     white-space: pre-line;
+}
+
+.postDivider {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 3rem;
+    color: gray;
 }
 
 .text {
@@ -26,7 +34,7 @@
 
 .sectionBreak{
     margin:  2% 2rem 3% 2rem;
-    border-bottom: 0.1rem solid black;
+    border-bottom: 0.1rem solid white;
 }
 
 .signatureTitle, .signatureBody, .desc {

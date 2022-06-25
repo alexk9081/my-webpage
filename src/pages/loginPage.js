@@ -40,19 +40,19 @@ function LoginPage(props) {
         return () => unsubscribe();
     }, [props]);
     
-    return <div>
+    return <div className={classes.loginPage}>
         {props.loginState ?
             <>
-                <h1 className={classes.general}>Google sign-out</h1>
-                <button onClick={googleLogout}>Logout with Google</button>
+                <h1 className={classes.title}>Google sign-out</h1>
+                <button className={classes.loginButton} onClick={googleLogout}>Logout with Google</button>
 
-                <h1 className={classes.general}>Results</h1>
-                <button onClick={getResults}>Get result</button>
+                <h1 className={classes.title}>Results</h1>
+                <button className={classes.loginButton} onClick={getResults}>Get result</button>
             </>
             :
             <>
-                <h1 className={classes.general}>Google sign-in</h1>
-                <button onClick={googleLogin}>Login with Google</button>
+                <h1 className={classes.title}>Google sign-in</h1>
+                <button className={classes.loginButton} onClick={googleLogin}>Login with Google</button>
             </>
         }
     </div>

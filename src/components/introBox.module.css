@@ -1,32 +1,24 @@
 .intro {
     font-family: "Open Sans", sans-serif;
-    color: black;
+    color: white;
     margin: 3%;
 }
 
 .title {
-    background-color: white;
-    border-color: black;
-    border: 0.1rem;
-    border-style: solid;
-    border-bottom-style: none;
-    border-radius: 8px 8px 0px 0px;
+    background-color: #1a1c25;
+    font-size: 3rem;
     padding: 0.7rem;
-    padding-top: 0.3rem;
-    padding-bottom: 0.1rem;
-    max-width: fit-content;
-    margin-bottom: 0%;
+    text-align: center;
 }
 
 .body {
     margin-top: 0%;
-    padding: 0.5rem;
-    background-color: white;
-    border-radius: 0px 8px 8px 8px;
+    padding: 1.5rem 0.5rem 1.5rem 1rem;
+    background-color: #1a1c25;
     white-space: pre-line;
-    border-color: black;
     border: 0.1rem;
-    border-style: solid;
+    border-top-style: solid;
+    border-bottom-style: solid;
 }
 
 .text {

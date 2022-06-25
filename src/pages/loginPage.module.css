@@ -1,3 +1,24 @@
-.general{
+.title{
     text-align: center;
+    color: white;
+}
+
+.loginPage{
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    background-color: #1a1c25;
+    display: flex;
+    flex-flow: column;
+    height: calc(100vh - 40px - 1.6rem);
+    align-items: center;
+}
+
+.loginButton{
+    width: 300px;
+    height: 75px;
+    background-color: white;
+}
+
+.loginButton:hover{
+    cursor: pointer;
 }

@@ -1,10 +1,8 @@
 .home {
-    background-color: #ffffff;
+    background-color: #1a1c25;
     display: flex;
     flex-flow: column;
-    height: 100%;
     height: calc(100vh - 40px - 1.6rem);
-    background-size:contain;
 }
 
 .mainContent{

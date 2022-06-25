@@ -33,6 +33,8 @@ function BlogPost() {
     }
 
     return <div className={classes.post}>
+        <h1 className={classes.postDivider}>•••</h1>
+
         <h2  className={classes.title}>
             Lorem Ipsum Dolor
         </h2>
@@ -50,6 +52,7 @@ function BlogPost() {
         <p className={classes.signatureBody}>
             Whats poppin'
         </p>
+
     </div>
 }
 

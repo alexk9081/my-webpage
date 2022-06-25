@@ -11,7 +11,7 @@ function HomePage() {
     window.addEventListener("resize", setPageResize);
 
     useEffect(() => {
-        hidingContent.current.style.width = scrollingContent.current.clientWidth + "px";
+        hidingContent.current.style.width = (scrollingContent.current.clientWidth - 1) + "px";
     }, [pageResize]);
 
 
