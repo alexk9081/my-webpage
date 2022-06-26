@@ -1,4 +1,3 @@
-import classes from "./LoginPage.module.css";
 import { auth, provider } from "../firebaseConfig";
 import { signInWithRedirect, signOut } from "firebase/auth";
 import { useEffect } from "react";
@@ -19,14 +18,7 @@ function LoginPage(props) {
         });
     }
 
-    let getResults = () => {
-        if (auth.currentUser == null) {
-            console.log("No user logged in");
-            return;
-        }
-        console.log(auth.currentUser.email);
-    };
-
+    //Changes logged in state after redirect completes
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
             if (user) {
@@ -40,22 +32,14 @@ function LoginPage(props) {
         return () => unsubscribe();
     }, [props]);
     
-    return <div className={classes.loginPage}>
-        {props.loginState ?
-            <>
-                <h1 className={classes.title}>Google sign-out</h1>
-                <button className={classes.loginButton} onClick={googleLogout}>Logout with Google</button>
 
-                <h1 className={classes.title}>Results</h1>
-                <button className={classes.loginButton} onClick={getResults}>Get result</button>
-            </>
-            :
-            <>
-                <h1 className={classes.title}>Google sign-in</h1>
-                <button className={classes.loginButton} onClick={googleLogin}>Login with Google</button>
-            </>
-        }
-    </div>
+    if(props.loginState) {
+        return <button className={props.className} onClick={googleLogout}>Logout</button>
+ 
+    }
+    else{
+        return <button className={props.className} onClick={googleLogin}>Login with Google</button>
+    }
 }
 
 export default LoginPage;

@@ -6,6 +6,7 @@
 }
 
 .menuItem {
+    all: initial;
     width: 260px;
     font-weight: 800;
     font-family: "Open Sans", sans-serif;
@@ -15,6 +16,14 @@
     margin: 15px;
     padding: 10px;
     border-radius: 4px;
+}
+
+.menuButtonItem{
+    background-color: rgb(26, 36, 88);
+}
+
+.menuItem:hover{
+    cursor: pointer;
 }
 
 .homeNav {

@@ -4,6 +4,7 @@ import { FaBars, FaRocket, FaHome } from "react-icons/fa";
 import { useRef } from "react";
 import NavMenu from "./MobileNavMenu";
 import DropdownMenu from "./DropdownMenu";
+import LoginButton from "../components/LoginButton";
 
 function NavigationBar(props) {
     const childRef = useRef();
@@ -28,11 +29,15 @@ function NavigationBar(props) {
         <div className={classes.navList}>
             <DropdownMenu>
                 {/* <Link className={classes.navItem} to='/test'>Test Page</Link> */}
-                <Link className={classes.menuItem} to='/login'>{props.loginState ? "Logout" : "Login"}</Link>
-                {props.loginState && <Link className={classes.menuItem} to='/photo'>Add Photo</Link>}
-                <Link className={classes.menuItem} to='/data'>Add Information</Link>
+                {props.loginState && 
+                <>
+                    <Link className={classes.menuItem} to='/photo'>Add Photo</Link>
+                    <Link className={classes.menuItem} to='/data'>Add Information</Link>
+                </>
+                }
                 <Link className={classes.menuItem} to='/gallery'>Image Gallery</Link>
                 <Link className={classes.menuItem} to='/info'>About Me</Link>
+                <LoginButton className={[classes.menuItem, classes.menuButtonItem].join(' ')} loginState={props.loginState} setLoginState={props.setLoginState}></LoginButton>
             </DropdownMenu>
         </div>
         
