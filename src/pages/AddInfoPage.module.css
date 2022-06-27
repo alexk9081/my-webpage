@@ -1,0 +1,20 @@
+.addPostPage{
+    display: grid;
+}
+
+.input{
+    margin: 1rem;
+    width: 300px;
+    height: 2rem;
+
+    background-color: black;
+    color: white;
+}
+
+.submit{
+    margin: 1rem;
+    width: 100px;
+
+    background-color: blue;
+    color: white;
+}

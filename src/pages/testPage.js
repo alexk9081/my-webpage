@@ -1,5 +1,4 @@
 import TestDiv from "../components/TestDiv";
-import PostForm from "../components/arrangements/BlogPostForm.js";
 import { useState } from "react";
 
 function TestPage() {
@@ -18,7 +17,6 @@ function TestPage() {
         <button onClick={flip}>flip</button>
         <TestDiv></TestDiv>
 
-        <PostForm />
     </div>
 }
 

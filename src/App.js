@@ -5,7 +5,7 @@ import NavigationBar from "./layout/NavigationBar";
 import GalleryPage from "./pages/PhotoGallery";
 import HomePage from "./pages/HomePage";
 import ProjectInfoPage from "./pages/AboutMePage";
-import AddInfo from "./pages/AddInfoPage";
+import AddInfoPage from "./pages/AddInfoPage";
 import AddPicture from "./pages/AddPicturesPage";
 import TestPage from "./pages/TestPage";
 
@@ -20,7 +20,7 @@ function App() {
         <Route exact path='/gallery' component={GalleryPage} />
         <Route exact path='/info' component={ProjectInfoPage} />
         <ProtectedRoute exact path='/photo' component={AddPicture} />
-        <Route exact path='/data' component={AddInfo} />
+        <Route exact path='/data' component={AddInfoPage} />
         <Route exact path='/test' component={TestPage} />
         <Route path='*' component={HomePage} />
       </Switch>
