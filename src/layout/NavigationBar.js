@@ -16,7 +16,7 @@ function NavigationBar(props) {
     return <nav className={classes.navBar}>
         {/* Left home button */}
         <div>
-            <Link className={classes.homeNav} to='/my-webpage/'>
+            <Link className={classes.homeNav} to='/my-webpage'>
                 <FaHome className={classes.homeIcon} />
                 Home
             </Link>
@@ -36,6 +36,7 @@ function NavigationBar(props) {
                 </>
                 }
                 <Link className={classes.menuItem} to='/gallery'>Image Gallery</Link>
+                <Link className={classes.menuItem} to='/colors'>Color References</Link>
                 <Link className={classes.menuItem} to='/info'>About Me</Link>
                 <LoginButton className={[classes.menuItem, classes.menuButtonItem].join(' ')} loginState={props.loginState} setLoginState={props.setLoginState}></LoginButton>
             </DropdownMenu>

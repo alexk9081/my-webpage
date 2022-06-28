@@ -8,6 +8,7 @@ import ProjectInfoPage from "./pages/AboutMePage";
 import AddInfoPage from "./pages/AddInfoPage";
 import AddPicture from "./pages/AddPicturesPage";
 import TestPage from "./pages/TestPage";
+import ColorReferencePage from "./pages/ColorReferencePage";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -21,6 +22,7 @@ function App() {
         <Route exact path='/info' component={ProjectInfoPage} />
         <ProtectedRoute exact path='/photo' component={AddPicture} />
         <Route exact path='/data' component={AddInfoPage} />
+        <Route exact path='/colors' component={ColorReferencePage}/>
         <Route exact path='/test' component={TestPage} />
         <Route path='*' component={HomePage} />
       </Switch>

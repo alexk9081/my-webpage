@@ -1,0 +1,33 @@
+.colorBox{
+    border: 2px solid black;
+    border-radius: 8px;
+
+    margin: 1rem;
+}
+
+.colorBox:hover{
+    cursor: pointer;
+}
+
+.colorBox:active{
+    filter: brightness(0.85);
+}
+
+.colorBoxDark{
+    border: 2px solid white;
+    border-radius: 8px;
+
+    margin: 1rem;
+}
+
+.colorBoxDark:hover{
+    cursor: pointer;
+}
+
+.colorBoxDark:active{
+    filter: invert(0.15);;
+}
+
+.colorText{
+    text-align: center;
+}
