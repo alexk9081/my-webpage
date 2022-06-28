@@ -9,10 +9,6 @@ import LoginButton from "../components/LoginButton";
 function NavigationBar(props) {
     const childRef = useRef();
 
-    function showNavMenu() {
-        childRef.current.openMenu();
-    }
-
     return <nav className={classes.navBar}>
         {/* Left home button */}
         <div>
@@ -38,13 +34,26 @@ function NavigationBar(props) {
                 <Link className={classes.menuItem} to='/gallery'>Image Gallery</Link>
                 <Link className={classes.menuItem} to='/colors'>Color References</Link>
                 <Link className={classes.menuItem} to='/info'>About Me</Link>
-                <LoginButton className={[classes.menuItem, classes.menuButtonItem].join(' ')} loginState={props.loginState} setLoginState={props.setLoginState}></LoginButton>
+                <LoginButton className={[classes.menuItem, classes.menuLoginButton].join(' ')} loginState={props.loginState} setLoginState={props.setLoginState} />
             </DropdownMenu>
         </div>
         
         {/* Hamburger menu for mobile*/}
-        <FaBars className={classes.mobileMenuButton} onClick={showNavMenu} />
-        <NavMenu ref={childRef}/>
+        <FaBars className={classes.mobileMenuButton} onClick={() => childRef.current.openMenu()} />
+        <NavMenu ref={childRef}>
+            {props.loginState && 
+                <>
+                    <Link className={classes.navItem} onClick={() => childRef.current.closeMenu()} to='/photo'>Add Photo</Link>
+                    <Link className={classes.navItem} onClick={() => childRef.current.closeMenu()} to='/data'>Add Information</Link>
+                </>
+            }
+            <Link className={classes.navItem} onClick={() => childRef.current.closeMenu()} to='/gallery'>Image Gallery</Link>
+            <Link className={classes.navItem} onClick={() => childRef.current.closeMenu()} to='/colors'>Color References</Link>
+            <Link className={classes.navItem} onClick={() => childRef.current.closeMenu()} to='/info'>About Me</Link>
+            {/* <Link className={classes.navItem} onClick={closeMenu} to='/test'>Test Page</Link> */}
+
+            <LoginButton className={[classes.navItem, classes.navLoginButton].join(' ')} loginState={props.loginState} setLoginState={props.setLoginState} />
+        </NavMenu>
     </nav>
 }
 

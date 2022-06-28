@@ -5,6 +5,24 @@
     justify-content: space-between;
 }
 
+.homeNav {
+    font-weight: 800;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    background-color: none;
+    color: white;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.homeIcon{
+    color: white;
+    font-size: 1.3rem;
+    transform: translate(0, 23%);
+    margin-right: .3rem;
+}
+
 .menuItem {
     all: initial;
     width: 260px;
@@ -18,28 +36,29 @@
     border-radius: 4px;
 }
 
-.menuButtonItem{
-    background-color: #1a2458;
-}
-
 .menuItem:hover{
     cursor: pointer;
 }
 
-.homeNav {
+.menuLoginButton{
+    background-color: #1a2458;
+}
+
+.navItem {
+    all: initial;
     font-weight: 800;
     font-family: "Open Sans", sans-serif;
-    text-decoration: none;
-    background-color: none;
+    text-align: center;
+    background-color: #111;
     color: white;
-    margin: 15px;
-    padding: 10px;
-    border-radius: 4px;
+    margin: 0;
+    padding: 3rem;
 }
 
 .navItem:hover {
     transition: all 0.3s ease;
-    background-color: rgb(39, 39, 39);
+    cursor: pointer;
+    background-color: #272727;
 }
 
 .navItem:active {
@@ -47,6 +66,9 @@
     border-color: black;
 }
 
+.navLoginButton{
+    border: none;
+}
 
 .mobileMenuButton {
     display: none;
@@ -66,13 +88,6 @@
     right: 50%;
     transform: translate(0, 60%);
     font-size: 1.8rem;
-}
-
-.homeIcon{
-    color: white;
-    font-size: 1.3rem;
-    transform: translate(0, 23%);
-    margin-right: .3rem;
 }
 
 @media only screen and (min-width: 764px) and (max-width: 1250px) {
