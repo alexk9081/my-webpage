@@ -67,8 +67,14 @@
 }
 
 .navLoginButton{
-    border: none;
+    background-color: #1a2458;
 }
+
+.navLoginButton:hover {
+    background-color: #1a2458;
+    filter: brightness(1.25);
+}
+
 
 .mobileMenuButton {
     display: none;
