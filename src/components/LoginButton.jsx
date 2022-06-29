@@ -23,8 +23,10 @@ function LoginPage(props) {
         const unsubscribe = auth.onAuthStateChanged(user => {
             if (user) {
                 props.setLoginState(true);
+                props.setUserState(user);
             } else {
                 props.setLoginState(false);
+                props.setUserState(null);
             }
         });
 

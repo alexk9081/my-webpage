@@ -34,7 +34,7 @@ function NavigationBar(props) {
                 <Link className={classes.menuItem} to='/gallery'>Image Gallery</Link>
                 <Link className={classes.menuItem} to='/colors'>Color References</Link>
                 <Link className={classes.menuItem} to='/info'>About Me</Link>
-                <LoginButton className={[classes.menuItem, classes.menuLoginButton].join(' ')} loginState={props.loginState} setLoginState={props.setLoginState} />
+                <LoginButton className={[classes.menuItem, classes.menuLoginButton].join(' ')} loginState={props.loginState} setLoginState={props.setLoginState} setUserState={props.setUserState} />
             </DropdownMenu>
         </div>
         
@@ -52,7 +52,7 @@ function NavigationBar(props) {
             <Link className={classes.navItem} onClick={() => childRef.current.closeMenu()} to='/info'>About Me</Link>
             {/* <Link className={classes.navItem} onClick={closeMenu} to='/test'>Test Page</Link> */}
 
-            <LoginButton className={[classes.navItem, classes.navLoginButton].join(' ')} loginState={props.loginState} setLoginState={props.setLoginState} />
+            <LoginButton className={[classes.navItem, classes.navLoginButton].join(' ')} loginState={props.loginState} setLoginState={props.setLoginState} setUserState={props.setUserState} />
         </MobileNavMenu>
     </nav>
 }
