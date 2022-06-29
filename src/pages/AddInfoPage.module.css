@@ -1,19 +1,44 @@
-.addPostPage{
-    display: grid;
+.addPostPage {
+    align-items: center;
+    background-color: #1a1c25;
+    display:flex;
+    height: calc(100vh - 40px - 1.6rem);
 }
 
-.input{
+.aligner{
+    width: 100%;
+}
+
+.titleInput {
     margin: 1rem;
-    width: 300px;
+    width: 80%;
     height: 2rem;
 
-    background-color: black;
-    color: white;
+    display: block;
+    margin: 50px auto;
+
+    background-color: white;
+    color: black;
 }
 
-.submit{
+.bodyInput{
+    margin: 1rem;
+    width: 80%;
+    height: 10rem;
+
+    display: block;
+    margin: 50px auto;
+
+    background-color: white;
+    color: black;
+}
+
+.submit {
     margin: 1rem;
     width: 100px;
+
+    display: block;
+    margin: auto;
 
     background-color: blue;
     color: white;

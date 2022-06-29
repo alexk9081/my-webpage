@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import classes from "./NavigationBar.module.css";
 import { FaBars, FaRocket, FaHome } from "react-icons/fa";
 import { useRef } from "react";
-import NavMenu from "./MobileNavMenu";
+import MobileNavMenu from "./MobileNavMenu";
 import DropdownMenu from "./DropdownMenu";
 import LoginButton from "../components/LoginButton";
 
@@ -40,7 +40,7 @@ function NavigationBar(props) {
         
         {/* Hamburger menu for mobile*/}
         <FaBars className={classes.mobileMenuButton} onClick={() => childRef.current.openMenu()} />
-        <NavMenu ref={childRef}>
+        <MobileNavMenu ref={childRef}>
             {props.loginState && 
                 <>
                     <Link className={classes.navItem} onClick={() => childRef.current.closeMenu()} to='/photo'>Add Photo</Link>
@@ -53,7 +53,7 @@ function NavigationBar(props) {
             {/* <Link className={classes.navItem} onClick={closeMenu} to='/test'>Test Page</Link> */}
 
             <LoginButton className={[classes.navItem, classes.navLoginButton].join(' ')} loginState={props.loginState} setLoginState={props.setLoginState} />
-        </NavMenu>
+        </MobileNavMenu>
     </nav>
 }
 
