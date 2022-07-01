@@ -1,0 +1,20 @@
+.projectCard{
+    margin: 1rem;
+    padding: 1rem;
+    width: 25%;
+    
+    border-radius: 8px;
+    
+    background-color: black;
+
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+}
+
+.projectImg{
+    width: 90%;
+}
+
+.text{
+    color: white;
+}

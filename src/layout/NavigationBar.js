@@ -24,7 +24,7 @@ function NavigationBar(props) {
         {/* Right nav buttons  */}
         <div className={classes.navList}>
             <DropdownMenu>
-                {/* <Link className={classes.navItem} to='/test'>Test Page</Link> */}
+                <Link className={classes.menuItem} to='/test'>Test Page</Link>
                 {props.loginState && 
                 <>
                     <Link className={classes.menuItem} to='/photo'>Add Photo</Link>

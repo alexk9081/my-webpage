@@ -1,5 +1,6 @@
 import TestDiv from "../components/TestDiv";
 import { useState } from "react";
+import ProjectCard from "../components/ProjectCard";
 
 function TestPage() {
     const [show, setShow] = useState(false);
@@ -17,6 +18,7 @@ function TestPage() {
         <button onClick={flip}>flip</button>
         <TestDiv></TestDiv>
 
+        <ProjectCard />
     </div>
 }
 
