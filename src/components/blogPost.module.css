@@ -37,6 +37,20 @@
     border-bottom: 0.1rem solid white;
 }
 
-.signatureTitle, .signatureBody, .desc {
+.desc {
     padding: 0rem 1.5rem;
+}
+
+.userName{
+    display: inline;
+}
+
+.userName, .userImg {
+    height: 2rem;
+    vertical-align : middle;
+}
+
+.userImg {
+    padding-left: 1.5rem;
+    padding-right: 0.5rem;
 }
