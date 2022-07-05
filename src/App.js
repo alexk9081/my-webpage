@@ -15,13 +15,13 @@ function App() {
 
   return (
     <div>
-      <NavigationBar loginState={loggedIn} setLoginState={setLoggedIn} userState={user} setUserState={setUser} />
+      <NavigationBar loginState={loggedIn} setLoginState={setLoggedIn} setUserState={setUser} />
       <Routes>
         <Route exact path='/my-webpage' element={<HomePage/>} />
         <Route exact path='/gallery' element={<GalleryPage />} />
         <Route exact path='/info' element={<AboutMePage />} />
         <Route exact path='/photo' element={<AddPicturesPage />} />
-        <Route exact path='/data' element={<AddInfoPage />} />
+        <Route exact path='/data' element={<AddInfoPage userName={user?.displayName} userImg={user?.photoURL} />} />
         <Route exact path='/colors' element={<ColorReferencePage />}/>
         <Route exact path='/test' element={<TestPage />} />
         <Route path='*' element={<HomePage />} />

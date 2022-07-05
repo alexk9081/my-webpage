@@ -21,14 +21,14 @@ function NavigationBar(props) {
         {/* Middle icon */}
         <FaRocket className={classes.logo} />
         
-        {/* Right nav buttons  */}
+        {/* Right desktop nav buttons */}
         <div className={classes.navList}>
             <DropdownMenu>
                 {/* <Link className={classes.menuItem} to='/test'>Test Page</Link> */}
                 {props.loginState && 
                 <>
                     <Link className={classes.menuItem} to='/photo'>Add Photo</Link>
-                    <Link className={classes.menuItem} to='/data' state={props.userState} >Add Information</Link>
+                    <Link className={classes.menuItem} to='/data'>Add Information</Link>
                 </>
                 }
                 <Link className={classes.menuItem} to='/gallery'>Image Gallery</Link>
@@ -38,7 +38,7 @@ function NavigationBar(props) {
             </DropdownMenu>
         </div>
         
-        {/* Hamburger menu for mobile*/}
+        {/* Hamburger menu for mobile */}
         <FaBars className={classes.mobileMenuButton} onClick={() => childRef.current.openMenu()} />
         <MobileNavMenu ref={childRef}>
             {props.loginState && 

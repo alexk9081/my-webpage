@@ -15,14 +15,12 @@ function AddInfoPage(props) {
         const docData = {
             body: body,
             title: title,
-            userDisplayName: props.location.state.props.loginState.displayName,
-            userImageUrl: props.location.state.props.loginState.photoURL,
+            userDisplayName: props.userName,
+            userImageUrl: props.userImg,
             date: Timestamp.fromDate(new Date())
         };
 
-        // await addDoc(blogPostData, docData);
-
-        navigate('/my-webpage');
+        await addDoc(blogPostData, docData).then(() => {navigate('/my-webpage')});
     }
     return <div className={classes.addPostPage}>
         <div className={classes.aligner}>
