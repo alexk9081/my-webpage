@@ -24,11 +24,11 @@ function NavigationBar(props) {
         {/* Right nav buttons  */}
         <div className={classes.navList}>
             <DropdownMenu>
-                <Link className={classes.menuItem} to='/test'>Test Page</Link>
+                {/* <Link className={classes.menuItem} to='/test'>Test Page</Link> */}
                 {props.loginState && 
                 <>
                     <Link className={classes.menuItem} to='/photo'>Add Photo</Link>
-                    <Link className={classes.menuItem} to='/data'>Add Information</Link>
+                    <Link className={classes.menuItem} to='/data' state={props.userState} >Add Information</Link>
                 </>
                 }
                 <Link className={classes.menuItem} to='/gallery'>Image Gallery</Link>
@@ -44,7 +44,7 @@ function NavigationBar(props) {
             {props.loginState && 
                 <>
                     <Link className={classes.navItem} onClick={() => childRef.current.closeMenu()} to='/photo'>Add Photo</Link>
-                    <Link className={classes.navItem} onClick={() => childRef.current.closeMenu()} to='/data'>Add Information</Link>
+                    <Link className={classes.navItem} onClick={() => childRef.current.closeMenu()} to='/data' >Add Information</Link>
                 </>
             }
             <Link className={classes.navItem} onClick={() => childRef.current.closeMenu()} to='/gallery'>Image Gallery</Link>

@@ -1,4 +1,4 @@
-import { Route, Redirect } from "react-router-dom";
+import { Route, Navigate  } from "react-router-dom";
 import { auth } from "../firebaseConfig";
 import Expire from "./Expire";
 
@@ -11,7 +11,7 @@ function ProtectedRoute({ component: Component, ...rest }) {
         else {
             console.log("Unable to redirect");
             <Expire delay={10}>Error</Expire>
-            return <Redirect to='/login' />
+            return <Navigate to='/login' />
         }
     };
 

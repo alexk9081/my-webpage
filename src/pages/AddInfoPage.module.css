@@ -9,6 +9,10 @@
     width: 100%;
 }
 
+.titleInput, .bodyInput, .submit {
+    font-family: "Open Sans", sans-serif;
+}
+
 .titleInput {
     margin: 1rem;
     width: 80%;
@@ -22,6 +26,8 @@
 }
 
 .bodyInput{
+    resize: none;
+
     margin: 1rem;
     width: 80%;
     height: 10rem;
@@ -31,6 +37,9 @@
 
     background-color: white;
     color: black;
+}
+.bodyInput:focus-visible{
+    outline: none;
 }
 
 .submit {
@@ -42,4 +51,7 @@
 
     background-color: blue;
     color: white;
+}
+.submit:active {
+    filter: brightness(0.85);
 }
