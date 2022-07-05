@@ -14,7 +14,6 @@ ProjectCard.defaultProps = {
     imgAlt: "Project preview",
     projectName: "Project Name",
     projectDesc: "Project Description"
-
 }
 
 ProjectCard.propTypes = {
@@ -22,7 +21,6 @@ ProjectCard.propTypes = {
     imgAlt: PropTypes.string,
     projectName: PropTypes.string,
     projectDesc: PropTypes.string
-
 }
 
 export default ProjectCard;
