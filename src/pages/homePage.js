@@ -2,7 +2,7 @@ import IntroBox from "../components/IntroBox";
 import classes from "./HomePage.module.css";
 import BlogPost from "../components/BlogPost";
 import { useEffect, useRef, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { firestore } from "../firebaseConfig";
 
 function HomePage() {
@@ -50,7 +50,7 @@ function HomePage() {
     useEffect(() => {
         const getPosts = async () => {
             const blogPostData = collection(firestore, "blogPosts");
-            const querySnapshot = await getDocs(blogPostData);
+            const querySnapshot = await getDocs(query(blogPostData, orderBy("date", "desc")));
             setPosts(querySnapshot.docs.map((doc) => {
                 return (
                     <BlogPost title={doc.data().title}  
