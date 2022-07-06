@@ -1,15 +1,18 @@
 import { auth, provider } from "../firebaseConfig";
 import { signInWithRedirect, signOut } from "firebase/auth";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 function LoginPage(props) {
-    let googleLogin = () => {
-        console.log("clicked");
+    const navigate = useNavigate();
+
+    const googleLogin = () => {
+        navigate('/my-webpage');
         signInWithRedirect(auth, provider);
-        console.log("test");
     };
 
-    let googleLogout = () => {
+    const googleLogout = () => {
         signOut(auth).then(() => {
             console.log("User signed out");
         }).catch((error) => {
@@ -33,13 +36,13 @@ function LoginPage(props) {
         // Cleanup subscription on unmount
         return () => unsubscribe();
     }, [props]);
-    
 
-    if(props.loginState) {
+
+    if (props.loginState) {
         return <button className={props.className} onClick={googleLogout}>Logout</button>
- 
+
     }
-    else{
+    else {
         return <button className={props.className} onClick={googleLogin}>Login with Google</button>
     }
 }
