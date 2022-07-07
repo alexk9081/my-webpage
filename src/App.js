@@ -8,6 +8,7 @@ import AddInfoPage from "./pages/AddInfoPage";
 import AddPicturesPage from "./pages/AddPicturesPage";
 import TestPage from "./pages/TestPage";
 import ColorReferencePage from "./pages/ColorReferencePage";
+import ProjectDisplayPage from "./pages/ProjectDisplayPage";
 
 function App() {
   const [user, setUser] = useState(null); 
@@ -23,6 +24,7 @@ function App() {
         <Route exact path='/photo' element={<AddPicturesPage />} />
         <Route exact path='/data' element={<AddInfoPage userName={user?.displayName} userImg={user?.photoURL} />} />
         <Route exact path='/colors' element={<ColorReferencePage />}/>
+        <Route exact path='/projects' element={<ProjectDisplayPage/>}/>
         <Route exact path='/test' element={<TestPage />} />
         <Route path='*' element={<HomePage />} />
       </Routes>

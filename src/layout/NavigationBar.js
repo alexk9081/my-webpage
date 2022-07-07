@@ -44,6 +44,7 @@ function NavigationBar(props) {
                 }
                 <Link {...linkProps} to='/gallery'>Image Gallery</Link>
                 <Link {...linkProps} to='/colors'>Color References</Link>
+                <Link {...linkProps} to='/projects'>Project Overviews</Link>
                 <Link {...linkProps} to='/info'>About Me</Link>
                 <LoginButton {...loginButtonProps} loginState={props.loginState} setLoginState={props.setLoginState} setUserState={props.setUserState} />
             </>
