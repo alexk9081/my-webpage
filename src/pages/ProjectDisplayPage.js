@@ -7,7 +7,7 @@ function ProjectDisplayPage() {
 
     return (
         <div className={classes.projectPage}>
-            <ProjectCard projectDesc="Displays collection of images" projectName="Photo Gallery"></ProjectCard>
+            <ProjectCard projectName="Photo Gallery" projectDesc="Displays collection of images"></ProjectCard>
             <ProjectCard></ProjectCard>
             <ProjectCard></ProjectCard>
             <ProjectCard></ProjectCard>
