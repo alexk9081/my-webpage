@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 function ProjectCard(props) {
+
     return (
         <Link to={props.link}>
-            <div className={classes.projectCard}>
-                <img className={classes.projectImg} src={props.imgUrl} alt={props.imgAlt} />
-                <h1 className={classes.text}>{props.projectName}</h1>
-                <p className={classes.text}>{props.projectDesc}</p>
+            <div className={classes.cardHolder}>
+                <div className={classes.projectCard}>
+                    <img className={classes.projectImg} src={props.imgUrl} alt={props.imgAlt} />
+                    <h1 className={classes.text}>{props.projectName}</h1>
+                    <p className={classes.text}>{props.projectDesc}</p>
+                </div>
             </div>
         </Link>
     )

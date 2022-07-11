@@ -1,0 +1,30 @@
+[
+    {
+        "imgUrl": "https://i.imgur.com/aBWTXxz.png",
+        "imgAlt": "Project preview",
+        "projectName": "Web Page",
+        "projectDesc": "Personal website used as an alternative portfolio to github",
+        "link": "/my-webpage"
+    },
+    {
+        "imgUrl": "https://i.imgur.com/UjEWFz4.png",
+        "imgAlt": "Project preview",
+        "projectName": "Photo Gallery",
+        "projectDesc": "Displays collection of images",
+        "link": "/gallery"
+    },
+    {
+        "imgUrl": "https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGhvdG98ZW58MHx8MHx8&w=1000&q=80",
+        "imgAlt": "Project preview",
+        "projectName": "Web Scraper",
+        "projectDesc": "Test long description. Test long description. Test long description. Test long description. Test long description. Test long description. Test long description. Test long description. ",
+        "link": "/my-webpage"
+    },
+    {
+        "imgUrl": "https://freeiconshop.com/wp-content/uploads/edd/checkmark-flat.png",
+        "imgAlt": "Project preview",
+        "projectName": "ML Generator",
+        "projectDesc": "Project Description",
+        "link": "/my-webpage"
+    }
+]

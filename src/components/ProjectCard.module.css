@@ -1,26 +1,44 @@
-.projectCard{
-    transition: 0.3s;
-
-    margin: 1rem;
-    padding: 1rem;
-    width: 29%;
-    
-    border-radius: 8px;
-    
-    background-color: black;
-
-    text-align: center;
-    font-family: "Open Sans", sans-serif;
+.cardHolder{
+    width: calc(100% / 3);
+    height: 60vh;
 
     float: left;
 }
 
+.projectCard{
+    transition: 0.3s;
+
+    padding: 1rem;
+    margin: 1rem;
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    
+    border-radius: 8px;
+    
+    background-color: black;
+    
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
 .projectCard:hover{
-    box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 4px 3px rgba(255, 255, 255, 0.2);
+    
+    margin: 0.5rem;
+    height: calc(100% - 1rem);
+    width: calc(100% - 1rem);
 }
 
 .projectImg{
-    width: 90%;
+    width: 80%;
+    height: 35vh;
+
+    object-fit: contain;
+    background-color: #111;
 }
 
 .text{

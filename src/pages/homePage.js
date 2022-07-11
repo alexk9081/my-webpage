@@ -19,9 +19,7 @@ function HomePage() {
 
     function convSecToTime(secs) {
         const date = new Date(secs * 1000);
-        const day = date.getDate();
         const month = date.getMonth() + 1;
-        const year = date.getFullYear();
         let hours = date.getHours();
         let minutes = date.getMinutes();
 
@@ -44,7 +42,7 @@ function HomePage() {
         const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         const monthName = monthNames[month - 1];
 
-        return `${monthName} ${day}, ${year} @ ${hours}:${minutes} ${ampm}`;
+        return `${monthName} ${date.getDate()}, ${date.getFullYear()} @ ${hours}:${minutes} ${ampm}`;
     }
 
     useEffect(() => {

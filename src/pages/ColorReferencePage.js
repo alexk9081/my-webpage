@@ -6,6 +6,7 @@ function ColorReferencePage() {
         <div className={classes.sizeWrapper}>
             <Color colorHex="#fff" />
             <Color colorHex="#888" dark={true} />
+            <Color colorHex="#111" dark={true} />
             <Color colorHex="#000" dark={true} />
             <Color colorHex="#1a1c25" dark={true} /> 
             <Color colorHex="#424552" dark={true} />
