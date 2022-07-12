@@ -4,32 +4,32 @@ import NavigationBar from "./layout/NavigationBar";
 import GalleryPage from "./pages/PhotoGallery";
 import HomePage from "./pages/HomePage";
 import AboutMePage from "./pages/AboutMePage";
-import AddInfoPage from "./pages/AddInfoPage";
+import AddBlogPostPage from "./pages/AddBlogPostPage";
 import AddPicturesPage from "./pages/AddPicturesPage";
 import TestPage from "./pages/TestPage";
 import ColorReferencePage from "./pages/ColorReferencePage";
 import ProjectDisplayPage from "./pages/ProjectDisplayPage";
 
 function App() {
-  const [user, setUser] = useState(null); 
-  const [loggedIn, setLoggedIn] = useState(false);
+	const [user, setUser] = useState(null);
+	const [loggedIn, setLoggedIn] = useState(false);
 
-  return (
-    <div>
-      <NavigationBar loginState={loggedIn} setLoginState={setLoggedIn} setUserState={setUser} />
-      <Routes>
-        <Route exact path='/my-webpage' element={<HomePage/>} />
-        <Route exact path='/gallery' element={<GalleryPage />} />
-        <Route exact path='/info' element={<AboutMePage />} />
-        <Route exact path='/photo' element={<AddPicturesPage />} />
-        <Route exact path='/data' element={<AddInfoPage userName={user?.displayName} userImg={user?.photoURL} />} />
-        <Route exact path='/colors' element={<ColorReferencePage />}/>
-        <Route exact path='/projects' element={<ProjectDisplayPage/>}/>
-        <Route exact path='/test' element={<TestPage />} />
-        <Route path='*' element={<HomePage />} />
-      </Routes>
-    </div>
-  );
+	return (
+		<div className="page">
+			<NavigationBar isLoggedInState={loggedIn} setIsLoggedInState={setLoggedIn} setUserState={setUser} />
+			<Routes>
+				<Route exact path='/my-webpage' element={<HomePage />} />
+				<Route exact path='/gallery' element={<GalleryPage />} />
+				<Route exact path='/info' element={<AboutMePage />} />
+				<Route exact path='/photo' element={<AddPicturesPage />} />
+				<Route exact path='/data' element={<AddBlogPostPage userName={user?.displayName} userImg={user?.photoURL} />} />
+				<Route exact path='/colors' element={<ColorReferencePage />} />
+				<Route exact path='/projects' element={<ProjectDisplayPage />} />
+				<Route exact path='/test' element={<TestPage />} />
+				<Route path='*' element={<HomePage />} />
+			</Routes>
+		</div>
+	);
 }
 
 export default App;

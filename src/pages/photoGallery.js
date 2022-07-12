@@ -72,19 +72,21 @@ function PhotoGallery() {
         </div>
     }
 
-    return <div className={classes.photosBox} id='main'>
-        <PhotoColumn>
-            {firstPicElements}
-        </PhotoColumn>
+    return (
+        <div className={classes.galleryPage}>
+            <PhotoColumn>
+                {firstPicElements}
+            </PhotoColumn>
 
-        <PhotoColumn>
-            {secondPicElements}
-        </PhotoColumn>
+            <PhotoColumn>
+                {secondPicElements}
+            </PhotoColumn>
 
-        <PhotoColumn>
-            {thirdPicElements}
-        </PhotoColumn>
-    </div>
+            <PhotoColumn>
+                {thirdPicElements}
+            </PhotoColumn>
+        </div>
+    )
 }
 
 export default PhotoGallery;

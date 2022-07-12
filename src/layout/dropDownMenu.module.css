@@ -1,35 +1,38 @@
 .menuButton{
-    background-color: none;
     color: white;
+    font-size: 1.7rem;
+
     padding: 10px;
+    
     border-radius: 4px;
-    display: block;
+    
     position: absolute;
     top: 0%;
     right: 2%;
     transform: translate(0, 20%);
-    font-size: 1.7rem;
+    
+    cursor: pointer;
 }
 
 .menuButton:hover{
-    cursor: pointer;
     transition: all 0.3s ease;
-    background-color: #272727;
+    background-color: #222;
 }
 
 .itemHolder{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    
     align-items: center;
-    margin-top: 1rem;
-    border-width: 1px;
-    border-color: white;
-    border-style: solid;
+    
+    border: 1px solid white;
     border-radius: 4px;
+
     background-color: #424552;
-    position: absolute;
-    top: 45px;
+
     width: 300px;
+
+    position: absolute;
+    top: calc(45px + 1rem);
     right: 2%;
 }

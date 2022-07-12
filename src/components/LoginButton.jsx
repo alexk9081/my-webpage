@@ -2,9 +2,10 @@ import { auth, provider } from "../firebaseConfig";
 import { signInWithRedirect, signOut } from "firebase/auth";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 
-function LoginPage(props) {
+function LoginButton({ className, isLoggedInState, setIsLoggedInState, setUserState }) {
     const navigate = useNavigate();
 
     const googleLogin = () => {
@@ -13,38 +14,49 @@ function LoginPage(props) {
     };
 
     const googleLogout = () => {
-        signOut(auth).then(() => {
-            console.log("User signed out");
-        }).catch((error) => {
-            console.log("An error occured");
-            console.log(error);
-        });
+        navigate('/my-webpage');
+        signOut(auth).catch((error) => console.log("Error Occured: " + error));
     }
 
     //Changes logged in state after redirect completes
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
             if (user) {
-                props.setLoginState(true);
-                props.setUserState(user);
+                setIsLoggedInState(true);
+                setUserState(user);
             } else {
-                props.setLoginState(false);
-                props.setUserState(null);
+                setIsLoggedInState(false);
+                setUserState(null);
             }
         });
 
         // Cleanup subscription on unmount
         return () => unsubscribe();
-    }, [props]);
+    }, [setIsLoggedInState, setUserState]);
 
 
-    if (props.loginState) {
-        return <button className={props.className} onClick={googleLogout}>Logout</button>
+    const authButton = () => {
+        if (isLoggedInState) {
+            return <button className={className} onClick={googleLogout}>Logout</button>
 
+        }
+        else {
+            return <button className={className} onClick={googleLogin}>Login with Google</button>
+        }
     }
-    else {
-        return <button className={props.className} onClick={googleLogin}>Login with Google</button>
-    }
+
+    return (
+        <>
+            {authButton()}
+        </>
+    )
 }
 
-export default LoginPage;
+LoginButton.propTypes = {
+    isLoggedInState: PropTypes.bool.isRequired,
+    setUserState: PropTypes.func.isRequired,
+    setIsLoggedInState: PropTypes.func.isRequired,
+    className: PropTypes.string
+}
+
+export default LoginButton;

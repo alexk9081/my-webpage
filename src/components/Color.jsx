@@ -1,24 +1,41 @@
 import classes from "./Color.module.css";
+import PropTypes from "prop-types";
 
-function Color(props) {
-    function copyToClipboard() {
-        navigator.clipboard.writeText(props.colorHex);
+function Color({ colorHex, isDark }) {
+    let colorBoxClass;
+    let textColor;
+    if (isDark) {
+        colorBoxClass = classes.colorBoxDark;
+        textColor = "#fff"
+    }
+    else {
+        colorBoxClass = classes.colorBox
+        textColor = "#000"
     }
 
-    return <>
-    <div 
-        className={props.dark ? classes.colorBoxDark : classes.colorBox} 
-        style={{backgroundColor: props.colorHex}} 
-        onClick={copyToClipboard}
-    >
-        <h1 
-            className={classes.colorText} 
-            style={{color: props.dark ? "#fff" : "#000"}}
+    function copyToClipboard() {
+        navigator.clipboard.writeText(colorHex);
+    }
+
+    return (
+        <div
+            className={colorBoxClass}
+            onClick={copyToClipboard}
+            style={{ backgroundColor: colorHex }}
         >
-            {props.colorHex}
-        </h1>
-    </div>
-    </>
+            <h1
+                className={classes.colorText}
+                style={{ color: textColor }}
+            >
+                {colorHex}
+            </h1>
+        </div>
+    )
+}
+
+Color.propTypes = {
+    colorHex: PropTypes.string.isRequired,
+    isDark: PropTypes.bool
 }
 
 export default Color

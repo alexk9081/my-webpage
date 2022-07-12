@@ -1,80 +1,103 @@
 .navBar {
     background-color: black;
+
     padding: 20px;
+
     display: flex;
-    justify-content: space-between;
 }
 
-.homeNav {
-    font-weight: 800;
+.homeNavButton {
     font-family: "Open Sans", sans-serif;
+    font-weight: 800;
     text-decoration: none;
-    background-color: none;
+
     color: white;
+    background-color: none;
+
     margin: 15px;
     padding: 10px;
     border-radius: 4px;
 }
 
-.homeIcon{
+.homeNavButton:hover {
+    background-color: #222;
+}
+
+.homeIcon {
     color: white;
     font-size: 1.3rem;
+
     transform: translate(0, 23%);
     margin-right: .3rem;
 }
 
 .menuItem {
     all: initial;
-    width: 260px;
-    font-weight: 800;
+
     font-family: "Open Sans", sans-serif;
+    font-weight: 800;
     text-decoration: none;
-    background-color: black;
+
+    width: 260px;
+
     color: white;
+    background-color: black;
+
     margin: 15px;
     padding: 10px;
     border-radius: 4px;
-}
 
-.menuItem:hover{
     cursor: pointer;
 }
 
-.menuLoginButton{
+.menuItem:hover {
+    transition: all 0.1s ease;
+    background-color: #222;
+}
+
+.menuItemLoginButton {
     background-color: #1a2458;
 }
 
-.navItem {
-    all: initial;
-    font-weight: 800;
-    font-family: "Open Sans", sans-serif;
-    text-align: center;
-    background-color: #111;
-    color: white;
-    margin: 0;
-    padding: 3rem;
+.menuItemLoginButton:hover {
+    background-color: #131a3e;
 }
 
-.navItem:hover {
-    transition: all 0.3s ease;
+.mobileMenuItem {
+    all: initial;
+
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
+
+    text-align: center;
+
+    color: white;
+    background-color: #111;
+
+    margin: 0;
+    padding: 3rem;
+
     cursor: pointer;
+}
+
+.mobileMenuItem:hover {
+    transition: all 0.3s ease;
     background-color: #272727;
 }
 
-.navItem:active {
+.mobileMenuItem:active {
     border-radius: 2px;
     border-color: black;
 }
 
-.navLoginButton{
+.mobileMenuItemLoginButton {
     background-color: #1a2458;
 }
 
-.navLoginButton:hover {
+.mobileMenuItemLoginButton:hover {
     background-color: #1a2458;
     filter: brightness(1.25);
 }
-
 
 .mobileMenuButton {
     display: none;
@@ -88,33 +111,32 @@
 
 .logo {
     color: white;
-    display: block;
+    font-size: 1.8rem;
+
     position: absolute;
     top: 0;
     right: 50%;
-    transform: translate(0, 60%);
-    font-size: 1.8rem;
-}
-
-@media only screen and (min-width: 764px) and (max-width: 1250px) {
-    .logo {
-        display: none;
-    }
+    transform: translate(50%, 60%);
 }
 
 @media only screen and (max-width: 764px) {
     .mobileMenuButton {
         display: block;
+
         position: absolute;
         top: 0;
         right: 0;
         transform: translate(-100%, 23%);
+        
         font-size: 1.8rem;
+        
         cursor: pointer;
+        
         padding: 7px;
         border-radius: 4px;
     }
-    .navList {
+
+    .menu {
         display: none;
     }
 }

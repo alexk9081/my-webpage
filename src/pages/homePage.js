@@ -15,7 +15,7 @@ function HomePage() {
 
     useEffect(() => {
         hidingContent.current.style.width = (scrollingContent.current.clientWidth - 1) + "px";
-    }, [pageResize]);
+    }, [pageResize])
 
     function convSecToTime(secs) {
         const date = new Date(secs * 1000);
@@ -51,29 +51,32 @@ function HomePage() {
             const querySnapshot = await getDocs(query(blogPostData, orderBy("date", "desc")));
             setPosts(querySnapshot.docs.map((doc) => {
                 return (
-                    <BlogPost title={doc.data().title}  
-                        description={doc.data().body} 
-                        time={convSecToTime(doc.data().date.seconds)} 
-                        userName={doc.data().userDisplayName} 
+                    <BlogPost title={doc.data().title}
+                        description={doc.data().body}
+                        time={convSecToTime(doc.data().date.seconds)}
+                        userName={doc.data().userDisplayName}
                         userImg={doc.data().userImageUrl}
                         key={doc.data().date.seconds} />
-                )})
+                )
+            })
             );
-        } 
-        
-        getPosts();
-    }, []);
+        }
 
-    return <div className={classes.home}>
-        <div className={classes.hiderDiv} ref={hidingContent} >
-            <main className={classes.mainContent} ref={scrollingContent}>
-                <IntroBox />
-                <section>
-                    {posts}
-                </section>
-            </main>
+        getPosts();
+    }, [])
+
+    return (
+        <div className={classes.home}>
+            <div className={classes.hiderDiv} ref={hidingContent} >
+                <main className={classes.mainContent} ref={scrollingContent}>
+                    <IntroBox />
+                    <section>
+                        {posts}
+                    </section>
+                </main>
+            </div>
         </div>
-    </div>
+    )
 }
 
 export default HomePage;

@@ -26,11 +26,11 @@ ProjectCard.defaultProps = {
 }
 
 ProjectCard.propTypes = {
-    imgUrl: PropTypes.string,
+    imgUrl: PropTypes.string.isRequired,
     imgAlt: PropTypes.string,
-    projectName: PropTypes.string,
+    projectName: PropTypes.string.isRequired,
     projectDesc: PropTypes.string,
-    link: PropTypes.string
+    link: PropTypes.string.isRequired
 }
 
 export default ProjectCard;

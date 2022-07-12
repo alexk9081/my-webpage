@@ -26,10 +26,12 @@ function MobileNavMenu(props, ref) {
 
 
 
-    return <div className={navMenuClasses.join(' ')}>
-        <FaTimes className={classes.closeBtn} onClick={() => setNavMenuClasses([classes.navMenu])} />
-        {!isDesktop && props.children}
-    </div>
+    return (
+        <div className={navMenuClasses.join(' ')}>
+            <FaTimes className={classes.closeBtn} onClick={() => setNavMenuClasses([classes.navMenu])} />
+            {!isDesktop && props.children}
+        </div>
+    )
 }
 
 const forwardedChild = forwardRef(MobileNavMenu);

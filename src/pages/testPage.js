@@ -9,17 +9,15 @@ function TestPage() {
         setShow(!show);
     }
 
-    return <div>
-
-        Test Page
-
-        {show && <p>show is true</p>}
-
-        <button onClick={flip}>flip</button>
-        <TestDiv></TestDiv>
-
-        <ProjectCard />
-    </div>
+    return (
+        <div>
+            Test Page
+            {show && <p>show is true</p>}
+            <button onClick={flip}>flip</button>
+            <TestDiv></TestDiv>
+            <ProjectCard />
+        </div>
+    )
 }
 
 export default TestPage;

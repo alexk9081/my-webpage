@@ -18,14 +18,14 @@ function AddPicture() {
 
         // free memory when ever this component is unmounted
         return () => URL.revokeObjectURL(objectUrl);
-    }, [selectedFile]);
+    }, [selectedFile])
 
-    let onFileChange = event => {
+    const onFileChange = (event) => {
         // Update the state
         setSelectedFile(event.target.files[0]);
-    };
+    }
 
-    let onFileUpload = () => {
+    const uploadFile = () => {
         if (selectedFile == null) {
             console.log("No file selected");
             return;
@@ -70,15 +70,15 @@ function AddPicture() {
                 }
             }
         );
-    };
+    }
 
     // File information to be displayed after file upload is complete
-    let fileData = () => {
+    const fileData = () => {
         if (selectedFile) {
             return (
                 <>
                     <div className={classes.general}>
-                        {selectedFile &&  <img src={preview} alt="Preview" className={classes.previewImg} /> }
+                        {selectedFile && <img src={preview} alt="Preview" className={classes.previewImg} />}
                     </div>
                     <div>
                         <h2 className={classes.general}>File Details:</h2>
@@ -96,20 +96,22 @@ function AddPicture() {
                 </div>
             );
         }
-    };
+    }
 
-    return <div>
-        <h3 className={classes.title}>
-            File Upload
-        </h3>
-        <div className={classes.uploadItems}>
-            <input type="file" accept=".mov,.png,.jpg,.jpeg" onChange={onFileChange} className={classes.fileUpload} />
-            <button onClick={onFileUpload} className={classes.button}>
-                Upload!
-            </button>
+    return (
+        <div>
+            <h3 className={classes.title}>
+                File Upload
+            </h3>
+            <div className={classes.uploadItems}>
+                <input type="file" accept=".mov,.png,.jpg,.jpeg" onChange={onFileChange} className={classes.fileUpload} />
+                <button onClick={uploadFile} className={classes.button}>
+                    Upload!
+                </button>
+            </div>
+            {fileData()}
         </div>
-        {fileData()}
-    </div>
+    )
 }
 
 export default AddPicture;

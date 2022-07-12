@@ -1,8 +1,10 @@
 .column {
+    height: min-content;
     min-width: 100px;
     width: 27%;
+
     margin: 10px;
     padding: 1px;
+
     display: inline-block;
-    height: min-content;
 }

@@ -1,23 +1,29 @@
 .home {
     background-color: #1a1c25;
+    
     display: flex;
     flex-flow: column;
+    
     height: calc(100vh - 40px - 1.6rem);
 }
 
 .mainContent{
-    justify-content: center;
     background-color: #1a1c25;
+    
+    justify-content: center;
+    
     padding-top: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    
     width: 70vw;
     height: calc(100vh - 3.6rem - 40px);
+    
     overflow-y: scroll;
 }
 
 .hiderDiv{
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
     overflow: hidden;
     width: 760px;
 }
