@@ -33,33 +33,34 @@ function PhotoGallery() {
             setIsLoading(false);
         }
 
-        listAll(storageRef).then(function (result) {
-            const allPromises = result.items.map((input) => {
-                return getDownloadURL(ref(storage, input))
-            })
-
-            //Map each url to photo object and add it to next column
-            for (let i = 0; i < allPromises.length; i++) {
-                const promise = allPromises[i];
-
-                promise.then((url) => {
-                    const mappedComponent = <Photo key={url} src={url} alt="Alex and Maria" onLoad={pageController()} />;
-                    if (i % 3 === 0) {
-                        setFirstPicElements(oldArray => [...oldArray, mappedComponent]);
-                    }
-                    else if (i % 3 === 1) {
-                        setSecondPicElements(oldArray => [...oldArray, mappedComponent]);
-                    }
-                    else {
-                        setThirdPicElements(oldArray => [...oldArray, mappedComponent]);
-                    }
-
+        listAll(storageRef)
+            .then((result) => {
+                const allPromises = result.items.map((input) => {
+                    return getDownloadURL(ref(storage, input))
                 })
-                    .catch(function (error) {
-                        console.log(error);
+
+                //Map each url to photo object and add it to next column
+                for (let i = 0; i < allPromises.length; i++) {
+                    const promise = allPromises[i];
+
+                    promise.then((url) => {
+                        const mappedComponent = <Photo key={url} src={url} alt="Alex and Maria" onLoad={pageController()} />;
+                        if (i % 3 === 0) {
+                            setFirstPicElements(oldArray => [...oldArray, mappedComponent]);
+                        }
+                        else if (i % 3 === 1) {
+                            setSecondPicElements(oldArray => [...oldArray, mappedComponent]);
+                        }
+                        else {
+                            setThirdPicElements(oldArray => [...oldArray, mappedComponent]);
+                        }
+
                     })
-            }
-        })
+                        .catch(function (error) {
+                            console.log(error);
+                        })
+                }
+            })
             .catch(function (error) {
                 console.log(error);
             });

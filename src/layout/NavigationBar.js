@@ -35,7 +35,7 @@ function NavigationBar(props) {
 
         return (
             <>
-                {/* <Link {...linkProps} to='/test'>Test Page</Link> */}
+                <Link {...linkProps} to='/test'>Test Page</Link>
                 {props.isLoggedInState &&
                     <>
                         <Link {...linkProps} to='/photo'>Add Photo</Link>
