@@ -9,6 +9,7 @@ import AddPicturesPage from "./pages/AddPicturesPage";
 import TestPage from "./pages/TestPage";
 import ColorReferencePage from "./pages/ColorReferencePage";
 import ProjectDisplayPage from "./pages/ProjectDisplayPage";
+import Notifications from "./components/Notifications";
 
 function App() {
 	const [user, setUser] = useState(null);
@@ -17,6 +18,7 @@ function App() {
 	return (
 		<div className="page">
 			<NavigationBar isLoggedInState={loggedIn} setIsLoggedInState={setLoggedIn} setUserState={setUser} />
+			<Notifications />
 			<Routes>
 				<Route exact path='/my-webpage' element={<HomePage />} />
 				<Route exact path='/gallery' element={<GalleryPage />} />

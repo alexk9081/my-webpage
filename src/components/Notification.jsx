@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
+import classes from "./Notification.module.css";
 
-function Notification() {
+function Notification({text}) {
     const [isActive, setIsActive] = useState(true);
 
     useEffect(() => {
-        setTimeout(() => setIsActive(false), 1000);
+        setTimeout(() => setIsActive(false), 1500);
     }, [])
 
     return ( isActive &&
-        <div>
-            This is a notification
+        <div className={classes.notification}>
+            {text}
         </div>
     )
+}
+
+Notification.defaultProps = {
+    text: "This is a notification"
 }
 
 export default Notification;

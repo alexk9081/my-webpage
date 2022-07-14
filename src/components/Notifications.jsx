@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Notification from "./Notification";
 import { v4 as uuidv4 } from 'uuid';
-
+import classes from "./Notifications.module.css";
 
 function Notifications() {
     const [notificationsList, setNotificationsList] = useState([]);
@@ -11,7 +11,7 @@ function Notifications() {
     }
 
     return (
-        <div>
+        <div className={classes.notificationsList}>
             <button onClick={addNotifcation}>Add Notification</button>
             {notificationsList}
         </div>
