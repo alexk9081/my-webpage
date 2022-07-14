@@ -1,21 +1,29 @@
-import { useState } from "react";
+import { forwardRef, useState, useImperativeHandle } from "react";
 import Notification from "./Notification";
 import { v4 as uuidv4 } from 'uuid';
 import classes from "./Notifications.module.css";
 
-function Notifications() {
+function NotificationList(props, ref) {
     const [notificationsList, setNotificationsList] = useState([]);
 
-    function addNotifcation() {
-        setNotificationsList(notificationsList.concat(<Notification key={uuidv4()} />));
+    useImperativeHandle(ref, () => ({
+        addNotification(text) {
+            createNotification(text);
+        }
+    }));
+
+
+    function createNotification(notificationInfo) {
+        setNotificationsList(notificationsList.concat(<Notification text={notificationInfo} key={uuidv4()} />));
     }
 
     return (
         <div className={classes.notificationsList}>
-            <button onClick={addNotifcation}>Add Notification</button>
             {notificationsList}
         </div>
     )
 }
+
+const Notifications = forwardRef(NotificationList);
 
 export default Notifications;

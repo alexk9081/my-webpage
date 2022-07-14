@@ -3,7 +3,7 @@ import classes from "./AddPicturesPage.module.css";
 import { ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../firebaseConfig";
 
-function AddPicture() {
+function AddPicture({errorMsg}) {
     const [selectedFile, setSelectedFile] = useState(null);
     const [preview, setPreview] = useState();
 
@@ -27,7 +27,7 @@ function AddPicture() {
 
     const uploadFile = () => {
         if (selectedFile == null) {
-            console.log("No file selected");
+            errorMsg("No file selected");
             return;
         }
         const metadata = {

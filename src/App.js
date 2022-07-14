@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Route, Routes } from "react-router-dom";
 import NavigationBar from "./layout/NavigationBar";
 import GalleryPage from "./pages/PhotoGallery";
@@ -12,18 +12,19 @@ import ProjectDisplayPage from "./pages/ProjectDisplayPage";
 import Notifications from "./components/Notifications";
 
 function App() {
+	const notificationRef = useRef();
 	const [user, setUser] = useState(null);
 	const [loggedIn, setLoggedIn] = useState(false);
 
 	return (
 		<div className="page">
 			<NavigationBar isLoggedInState={loggedIn} setIsLoggedInState={setLoggedIn} setUserState={setUser} />
-			<Notifications />
+			<Notifications ref={notificationRef} />
 			<Routes>
 				<Route exact path='/my-webpage' element={<HomePage />} />
 				<Route exact path='/gallery' element={<GalleryPage />} />
 				<Route exact path='/info' element={<AboutMePage />} />
-				<Route exact path='/photo' element={<AddPicturesPage />} />
+				<Route exact path='/photo' element={<AddPicturesPage errorMsg={(notificationText) => notificationRef.current.addNotification(notificationText)}/>} />
 				<Route exact path='/data' element={<AddBlogPostPage userName={user?.displayName} userImg={user?.photoURL} />} />
 				<Route exact path='/colors' element={<ColorReferencePage />} />
 				<Route exact path='/projects' element={<ProjectDisplayPage />} />
