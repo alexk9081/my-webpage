@@ -7,7 +7,7 @@ import DropdownMenu from "./DropdownMenu";
 import LoginButton from "../components/LoginButton";
 
 function NavigationBar(props) {
-    const childRef = useRef();
+    const mobileMenuRef = useRef();
 
     const mobileItems = (isMobile) => {
         let linkProps;
@@ -16,7 +16,7 @@ function NavigationBar(props) {
         if (isMobile) {
             linkProps = {
                 className: classes.mobileMenuItem,
-                onClick: () => childRef.current.closeMenu()
+                onClick: () => mobileMenuRef.current.closeMenu()
             }
 
             loginButtonProps = {
@@ -72,8 +72,8 @@ function NavigationBar(props) {
             </div>
 
             {/* Hamburger menu for mobile */}
-            <FaBars className={classes.mobileMenuButton} onClick={() => childRef.current.openMenu()} />
-            <MobileNavMenu ref={childRef}>
+            <FaBars className={classes.mobileMenuButton} onClick={() => mobileMenuRef.current.openMenu()} />
+            <MobileNavMenu ref={mobileMenuRef}>
                 {mobileItems(true)}
             </MobileNavMenu>
         </nav>

@@ -2,7 +2,7 @@ import { forwardRef, useState, useEffect, useImperativeHandle } from "react";
 import { FaTimes } from "react-icons/fa";
 import classes from "./MobileNavMenu.module.css";
 
-function MobileNavMenu(props, ref) {
+function MobileMenu(props, ref) {
     const [isDesktop, setDesktop] = useState(window.innerWidth > 764);
     const [navMenuClasses, setNavMenuClasses] = useState([classes.navMenu]);
 
@@ -34,6 +34,6 @@ function MobileNavMenu(props, ref) {
     )
 }
 
-const forwardedChild = forwardRef(MobileNavMenu);
+const MobileNavMenu = forwardRef(MobileMenu);
 
-export default forwardedChild;
+export default MobileNavMenu;
