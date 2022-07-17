@@ -16,6 +16,8 @@ function App() {
 	const [user, setUser] = useState(null);
 	const [loggedIn, setLoggedIn] = useState(false);
 
+	const createNotification = (notificationText, notificationColor) => notificationRef.current.addNotification(notificationText, notificationColor);
+
 	return (
 		<div className="page">
 			<NavigationBar isLoggedInState={loggedIn} setIsLoggedInState={setLoggedIn} setUserState={setUser} />
@@ -24,9 +26,9 @@ function App() {
 				<Route exact path='/my-webpage' element={<HomePage />} />
 				<Route exact path='/gallery' element={<GalleryPage />} />
 				<Route exact path='/info' element={<AboutMePage />} />
-				<Route exact path='/photo' element={<AddPicturesPage errorMsg={(notificationText) => notificationRef.current.addNotification(notificationText)}/>} />
+				<Route exact path='/photo' element={<AddPicturesPage errorMsg={createNotification}/>} />
 				<Route exact path='/data' element={<AddBlogPostPage userName={user?.displayName} userImg={user?.photoURL} />} />
-				<Route exact path='/colors' element={<ColorReferencePage />} />
+				<Route exact path='/colors' element={<ColorReferencePage notification={createNotification}/>} />
 				<Route exact path='/projects' element={<ProjectDisplayPage />} />
 				<Route exact path='/test' element={<TestPage />} />
 				<Route path='*' element={<HomePage />} />

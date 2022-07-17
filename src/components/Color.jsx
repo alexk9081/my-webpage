@@ -1,7 +1,7 @@
 import classes from "./Color.module.css";
 import PropTypes from "prop-types";
 
-function Color({ colorHex, isDark }) {
+function Color({ notification, colorHex, isDark }) {
     let colorBoxClass;
     let textColor;
     if (isDark) {
@@ -13,8 +13,9 @@ function Color({ colorHex, isDark }) {
         textColor = "#000"
     }
 
-    function copyToClipboard() {
+    const copyToClipboard = () => {
         navigator.clipboard.writeText(colorHex);
+        notification("Copied " + colorHex + " to clipboard", "#fff")
     }
 
     return (

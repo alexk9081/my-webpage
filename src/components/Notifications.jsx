@@ -7,15 +7,10 @@ function NotificationList(_props, ref) {
     const [notificationsList, setNotificationsList] = useState([]);
 
     useImperativeHandle(ref, () => ({
-        addNotification(text) {
-            createNotification(text);
+        addNotification(notificationInfo, notificationColor) {
+            setNotificationsList(notificationsList.concat(<Notification text={notificationInfo} color={notificationColor} key={uuidv4()} />));
         }
     }));
-
-
-    function createNotification(notificationInfo) {
-        setNotificationsList(notificationsList.concat(<Notification text={notificationInfo} key={uuidv4()} />));
-    }
 
     return (
         <div className={classes.notificationsList}>

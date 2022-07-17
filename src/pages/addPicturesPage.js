@@ -27,7 +27,7 @@ function AddPicture({errorMsg}) {
 
     const uploadFile = () => {
         if (selectedFile == null) {
-            errorMsg("No file selected");
+            errorMsg("No file selected", "#800");
             return;
         }
         const metadata = {
