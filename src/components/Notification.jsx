@@ -9,7 +9,7 @@ function Notification({text}) {
     }, [])
 
     return ( isActive &&
-        <div className={classes.notification}>
+        <div className={classes.notification} onClick={() => setIsActive(false)}>
             {text}
         </div>
     )

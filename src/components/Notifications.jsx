@@ -3,7 +3,7 @@ import Notification from "./Notification";
 import { v4 as uuidv4 } from 'uuid';
 import classes from "./Notifications.module.css";
 
-function NotificationList(props, ref) {
+function NotificationList(_props, ref) {
     const [notificationsList, setNotificationsList] = useState([]);
 
     useImperativeHandle(ref, () => ({
