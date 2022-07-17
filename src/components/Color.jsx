@@ -15,7 +15,7 @@ function Color({ notification, colorHex, isDark }) {
 
     const copyToClipboard = () => {
         navigator.clipboard.writeText(colorHex);
-        notification("Copied " + colorHex + " to clipboard", "#fff")
+        notification("Copied \"" + colorHex + "\" to clipboard", "#424552")
     }
 
     return (

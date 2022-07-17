@@ -8,7 +8,7 @@ function NotificationList(_props, ref) {
 
     useImperativeHandle(ref, () => ({
         addNotification(notificationInfo, notificationColor) {
-            setNotificationsList(notificationsList.concat(<Notification text={notificationInfo} color={notificationColor} key={uuidv4()} />));
+            setNotificationsList([<Notification text={notificationInfo} color={notificationColor} key={uuidv4()} />].concat(notificationsList));
         }
     }));
 
