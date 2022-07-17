@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 
-function HiddenScrollDiv({ hiderClass, contentClass, children }) {
+function HiddenScrollDiv({ contentClass, children }) {
     const hidingContent = useRef(null);
     const scrollingContent = useRef(null);
     const [pageResize, setPageResize] = useState(null);
@@ -12,17 +12,18 @@ function HiddenScrollDiv({ hiderClass, contentClass, children }) {
     }, [pageResize])
 
     const defaultHiderStyle = {
+        margin: "0 auto",
         overflow: "hidden"
     }
     
     const defaultContentStyle = {
-        height: "calc(100vh - 3.6rem - 40px)",
+        height: "calc(100vh - 1.6rem - 40px)",
         "overflow-y": "scroll"
     
     }
     
     return (
-        <div className={hiderClass} style={defaultHiderStyle} ref={hidingContent} >
+        <div style={defaultHiderStyle} ref={hidingContent} >
             <div className={contentClass} style={defaultContentStyle} ref={scrollingContent}>
                 {children}
             </div>

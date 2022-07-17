@@ -45,7 +45,7 @@ function HomePage() {
 
     return (
         <div className={classes.home}>
-            <HiddenScrollDiv hiderClass={classes.hiderDiv} contentClass={classes.mainContent} >
+            <HiddenScrollDiv contentClass={classes.mainContent} >
                 <IntroBox />
                 <section>
                     {blogPosts()}
