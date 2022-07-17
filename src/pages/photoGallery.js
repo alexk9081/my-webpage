@@ -3,6 +3,7 @@ import Photo from "../components/Photo"
 import classes from "./PhotoGallery.module.css";
 import { useState, useEffect, useRef } from "react";
 import { ref, getDownloadURL, listAll } from "firebase/storage";
+import { v4 as uuidv4 } from 'uuid';
 import { storage } from "../firebaseConfig";
 
 function PhotoGallery() {
@@ -44,7 +45,7 @@ function PhotoGallery() {
                     const promise = allPromises[i];
 
                     promise.then((url) => {
-                        const mappedComponent = <Photo key={url} src={url} alt="Alex and Maria" onLoad={pageController()} />;
+                        const mappedComponent = <Photo key={uuidv4()} src={url} alt="Alex and Maria" onLoad={pageController()} />;
                         if (i % 3 === 0) {
                             setFirstPicElements(oldArray => [...oldArray, mappedComponent]);
                         }

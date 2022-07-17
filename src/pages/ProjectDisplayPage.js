@@ -1,6 +1,7 @@
 import ProjectCard from "../components/ProjectCard"
 import classes from "./ProjectDisplayPage.module.css";
 import projectList from "../documents/projectsInfo.json";
+import { v4 as uuidv4 } from 'uuid';
 
 function ProjectDisplayPage() {
     const projects = projectList.map((data) => {
@@ -10,7 +11,7 @@ function ProjectDisplayPage() {
             projectDesc={data.projectDesc}
             imgUrl={data.imgUrl}
             imgAlt={data.imgAlt}
-            key={data.projectName}
+            key={uuidv4()}
         />
     });
 

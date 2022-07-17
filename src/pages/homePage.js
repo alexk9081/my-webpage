@@ -3,6 +3,7 @@ import classes from "./HomePage.module.css";
 import BlogPost from "../components/BlogPost";
 import { useEffect, useState } from "react";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { v4 as uuidv4 } from 'uuid';
 import { firestore } from "../firebaseConfig";
 import HiddenScrollDiv from "../components/HiddenScrollDiv";
 
@@ -20,7 +21,7 @@ function HomePage() {
                         time={doc.data().date.seconds}
                         userName={doc.data().userDisplayName}
                         userImg={doc.data().userImageUrl}
-                        key={doc.data().date.seconds} />
+                        key={uuidv4()} />
                 )
             })
             );
