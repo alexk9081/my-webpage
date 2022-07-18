@@ -14,10 +14,6 @@
     cursor: pointer;
 }
 
-.colorBox:active {
-    filter: brightness(0.85);
-}
-
 
 .colorBoxDark {
     border: 2px solid white;
@@ -28,9 +24,4 @@
 
 .colorBoxDark:hover {
     cursor: pointer;
-}
-
-.colorBoxDark:active {
-    filter: invert(0.15);
-    ;
 }

@@ -1,15 +1,21 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import classes from "./Notification.module.css";
 
 function Notification({ text, color }) {
     const [isActive, setIsActive] = useState(true);
+    const [notificationStyle, setNotificationStyle] = useState({backgroundColor: color});
 
+    const unloadNotification = useCallback(() => {
+        setNotificationStyle({...notificationStyle, opacity: 0});
+        setTimeout(() => setIsActive(false), 1000);
+    }, [notificationStyle])
+    
     useEffect(() => {
-        setTimeout(() => setIsActive(false), 1500);
-    }, [])
+        setTimeout(() => unloadNotification(), 1500);
+    }, [unloadNotification])
 
     return (isActive &&
-        <div className={classes.notification} style={{backgroundColor: color}} onClick={() => setIsActive(false)}>
+        <div className={classes.notification} style={notificationStyle} onClick={() => unloadNotification()}>
             {text}
         </div>
     )
