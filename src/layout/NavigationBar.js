@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import classes from "./NavigationBar.module.css";
-import { FaBars, FaRocket, FaHome } from "react-icons/fa";
+import { FaBars, FaRegUser, FaHome } from "react-icons/fa";
 import { useRef } from "react";
 import MobileNavMenu from "./MobileNavMenu";
 import DropdownMenu from "./DropdownMenu";
@@ -62,7 +62,7 @@ function NavigationBar(props) {
             </div>
 
             {/* Middle icon */}
-            <FaRocket className={classes.logo} />
+            <FaRegUser className={classes.logo} />
 
             {/* Right desktop nav buttons */}
             <div className={classes.menu}>

@@ -1,21 +1,29 @@
 .profileInfo {
+    height: calc(100vh - 40px - 1.6rem);
+    background-color: #1a1c25;
     text-align: center;
 }
 
 .profileImg {
     margin: 10px;
 
-    border-width: 3px;
-    border-style: solid;
-    border-color: black;
+    border: 3px solid white;
     border-radius: 200px;
 }
 
 .profileHyperLink {
     text-decoration: none;
     
-    border: 1px black;
+    border: 1px white;
     border-bottom-style: dashed;
+}
+
+.profileHyperLink:link{
+    color: #9daeff;
+}
+
+.profileHyperLink:visited{
+    color: #9daeff;
 }
 
 .profileLinks {
@@ -23,5 +31,6 @@
 }
 
 .profileText {
+    color: white;
     margin: 0px;
 }

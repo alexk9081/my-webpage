@@ -14,10 +14,10 @@ function AboutMePage() {
             </p>
             <br /><br />
             <p className={classes.profileLinks}>
-                <b>Github:</b> <a className={classes.profileHyperLink} href="https://github.com/alexk9081">AlexK9081</a>
+                <b className={classes.profileText}>Github:</b> <a className={classes.profileHyperLink} href="https://github.com/alexk9081">AlexK9081</a>
             </p>
             <p className={classes.profileLinks}>
-                <b>Email:</b> <a className={classes.profileHyperLink} href="mailto:alexk9081@gmail.com">AlexK9081@gmail.com</a>
+                <b className={classes.profileText}>Email:</b> <a className={classes.profileHyperLink} href="mailto:alexk9081@gmail.com">AlexK9081@gmail.com</a>
             </p>
             <br />
         </div>
