@@ -18,7 +18,7 @@ function HiddenScrollDiv({ contentClass, children }) {
     
     const defaultContentStyle = {
         height: "calc(100vh - 1.6rem - 40px)",
-        "overflow-y": "scroll"
+        "overflowY": "scroll"
     
     }
     

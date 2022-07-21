@@ -8,6 +8,9 @@ function NotificationList(_props, ref) {
 
     useImperativeHandle(ref, () => ({
         addNotification(notificationInfo, notificationColor) {
+            if(notificationsList.length === 3){
+                notificationsList.pop();
+            }
             setNotificationsList([<Notification text={notificationInfo} color={notificationColor} key={uuidv4()} />].concat(notificationsList));
         }
     }));
