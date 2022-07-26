@@ -25,7 +25,7 @@ function App() {
 			<Routes>
 				<Route exact path='/my-webpage' element={<HomePage />} />
 				<Route exact path='/gallery' element={<GalleryPage />} />
-				<Route exact path='/info' element={<AboutMePage />} />
+				<Route exact path='/info' element={<AboutMePage notification={createNotification} />} />
 				<Route exact path='/photo' element={<AddPicturesPage errorMsg={createNotification}/>} />
 				<Route exact path='/data' element={<AddBlogPostPage userName={user?.displayName} userImg={user?.photoURL} />} />
 				<Route exact path='/colors' element={<ColorReferencePage notification={createNotification}/>} />

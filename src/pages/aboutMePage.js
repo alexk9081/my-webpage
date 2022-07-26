@@ -1,6 +1,11 @@
 import classes from "./AboutMePage.module.css";
 
-function AboutMePage() {
+function AboutMePage({ notification }) {
+    const copyEmail = () => {
+        navigator.clipboard.writeText("AlexK9081@gmail.com");
+        notification("Copied AlexK9081@gmail.com to clipboard", "#1a2458");
+    }
+
     return (
         <div className={classes.profileInfo}>
             <img src="https://avatars.githubusercontent.com/u/89793763?v=4" alt="Author" className={classes.profileImg} width="200px" />
@@ -17,7 +22,7 @@ function AboutMePage() {
                 <b className={classes.profileText}>Github:</b> <a className={classes.profileHyperLink} href="https://github.com/alexk9081">AlexK9081</a>
             </p>
             <p className={classes.profileLinks}>
-                <b className={classes.profileText}>Email:</b> <a className={classes.profileHyperLink} href="mailto:alexk9081@gmail.com">AlexK9081@gmail.com</a>
+                <b className={classes.profileText}>Email:</b> <a className={classes.profileHyperLink} href="mailto:alexk9081@gmail.com" onClick={copyEmail}>AlexK9081@gmail.com</a>
             </p>
             <br />
         </div>
