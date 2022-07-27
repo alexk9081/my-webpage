@@ -17,13 +17,17 @@ function AboutMePage({ notification }) {
             <p className={classes.profileText}>
                 My current focus is working on expanding my skillset and learning best practices.
             </p>
+            <br />
+            <p className={classes.profileText}>
+                Languages (Most-Least Proficient): Java, JavaScript, Python, C, C#
+            </p>
+            <br />
+            <p className={classes.profileText}>
+                Frameworks: React
+            </p>
             <br /><br />
-            <p className={classes.profileLinks}>
-                <b className={classes.profileText}>Github:</b> <a className={classes.profileHyperLink} href="https://github.com/alexk9081">AlexK9081</a>
-            </p>
-            <p className={classes.profileLinks}>
-                <b className={classes.profileText}>Email:</b> <a className={classes.profileHyperLink} href="mailto:alexk9081@gmail.com" onClick={copyEmail}>AlexK9081@gmail.com</a>
-            </p>
+            <button className={classes.buttonLink} onClick={() => { window.location.href = 'https://github.com/alexk9081' }} >AlexK9081</button>
+            <button className={classes.buttonLink} onClick={copyEmail}>AlexK9081@gmail.com</button>
             <br />
         </div>
     )

@@ -11,26 +11,26 @@
     border-radius: 200px;
 }
 
-.profileHyperLink {
-    text-decoration: none;
-    
-    border: 1px white;
-    border-bottom-style: dashed;
-}
-
-.profileHyperLink:link{
-    color: #9daeff;
-}
-
-.profileHyperLink:visited{
-    color: #9daeff;
-}
-
-.profileLinks {
-    margin: 1rem;
-}
-
 .profileText {
     color: white;
     margin: 0px;
+}
+
+.buttonLink {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    
+    border-radius: 8px;
+
+    color: white;
+    background-color: #5d68a0;
+
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.buttonLink:hover {
+    cursor: pointer;
+    background-color: #3e456b;
 }
