@@ -1,6 +1,6 @@
 import classes from "./AddBlogPostPage.module.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { firestore } from "../firebaseConfig";
 
@@ -29,6 +29,11 @@ function AddInfoPage(props) {
                 <input className={classes.titleInput} onChange={(newTitleInput) => { setTitle(newTitleInput.target.value) }} type="text" placeholder="Title" />
                 <textarea className={classes.bodyInput} onChange={(newBodyInput) => { setBody(newBodyInput.target.value) }} type="text" placeholder="Body" />
                 <input className={classes.submit} onClick={() => { submitPost() }} type="submit" />
+                
+
+                <Link to='/data/add-blog'>Add Post</Link>
+                <Link to='/data/preview-blog'>Preview Post</Link>
+                <Outlet />
             </div>
         </div>
     )

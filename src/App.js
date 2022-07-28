@@ -10,6 +10,8 @@ import TestPage from "./pages/TestPage";
 import ColorReferencePage from "./pages/ColorReferencePage";
 import ProjectDisplayPage from "./pages/ProjectDisplayPage";
 import Notifications from "./components/Notifications";
+import AddBlogPost from "./components/AddBlogPost";
+import PreviewBlogPost from "./components/PreviewBlogPost";
 
 function App() {
 	const notificationRef = useRef();
@@ -27,7 +29,10 @@ function App() {
 				<Route exact path='/gallery' element={<GalleryPage />} />
 				<Route exact path='/info' element={<AboutMePage notification={createNotification} />} />
 				<Route exact path='/photo' element={<AddPicturesPage errorMsg={createNotification}/>} />
-				<Route exact path='/data' element={<AddBlogPostPage userName={user?.displayName} userImg={user?.photoURL} />} />
+				<Route exact path='/data' element={<AddBlogPostPage userName={user?.displayName} userImg={user?.photoURL} />} >
+					<Route exact path='add-blog' element={<AddBlogPost />} />
+					<Route exact path='preview-blog' element={<PreviewBlogPost />} />
+				</ Route>
 				<Route exact path='/colors' element={<ColorReferencePage notification={createNotification}/>} />
 				<Route exact path='/projects' element={<ProjectDisplayPage />} />
 				<Route exact path='/test' element={<TestPage />} />
