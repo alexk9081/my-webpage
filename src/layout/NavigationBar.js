@@ -39,7 +39,7 @@ function NavigationBar(props) {
                 {props.isLoggedInState &&
                     <>
                         <Link {...linkProps} to='/photo'>Add Photo</Link>
-                        <Link {...linkProps} to='/data'>Add Information</Link>
+                        <Link {...linkProps} to='/data/add-blog'>Add Information</Link>
                     </>
                 }
                 <Link {...linkProps} to='/gallery'>Image Gallery</Link>
