@@ -16,12 +16,15 @@ function HomePage() {
             const querySnapshot = await getDocs(query(blogPostData, orderBy("date", "desc")));
             setPosts(querySnapshot.docs.map((doc) => {
                 return (
-                    <BlogPost title={doc.data().title}
-                        description={doc.data().body}
-                        time={doc.data().date.seconds}
-                        userName={doc.data().userDisplayName}
-                        userImg={doc.data().userImageUrl}
-                        key={uuidv4()} />
+                    <>
+                        <h1 className={classes.postDivider}>•••</h1>
+                        <BlogPost title={doc.data().title}
+                            description={doc.data().body}
+                            time={doc.data().date.seconds}
+                            userName={doc.data().userDisplayName}
+                            userImg={doc.data().userImageUrl}
+                            key={uuidv4()} />
+                    </>
                 )
             })
             );

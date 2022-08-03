@@ -33,7 +33,6 @@ function BlogPost({ title, time, description, userName, userImg }) {
 
     return (
         <div className={classes.post}>
-            <h1 className={classes.postDivider}>•••</h1>
             <h2 className={classes.title}>
                 {title}
             </h2>
@@ -57,7 +56,7 @@ BlogPost.defaultProps = {
 
 BlogPost.propTypes = {
     title: PropTypes.string.isRequired,
-    time: PropTypes.string,
+    time: PropTypes.number,
     description: PropTypes.string.isRequired,
     userName: PropTypes.string.isRequired,
     userImg: PropTypes.string.isRequired

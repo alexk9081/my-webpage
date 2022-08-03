@@ -9,7 +9,7 @@ function AddInfoPage({ userName, userImg}) {
     return (
         <div className={classes.addPostPage}>
             <div className={classes.aligner}>
-                <Outlet context={[title, setTitle, body, setBody, userName, userImg]} />
+                <Outlet context={[title, body, userName, userImg, setTitle, setBody]} />
             </div>
         </div>
     )

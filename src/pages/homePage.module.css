@@ -12,3 +12,14 @@
     
     width: 70vw;
 }
+
+.postDivider {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 2rem;
+
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+
+    color: gray;
+}

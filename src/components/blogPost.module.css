@@ -21,16 +21,6 @@
     white-space: pre-line;
 }
 
-.postDivider {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    font-size: 2rem;
-
-    padding-bottom: 3rem;
-
-    color: gray;
-}
-
 .sectionBreakLine {
     margin-right: 2rem;
     margin-left: 2rem;
