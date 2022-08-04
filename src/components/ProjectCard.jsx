@@ -2,15 +2,15 @@ import classes from "./ProjectCard.module.css";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function ProjectCard(props) {
+function ProjectCard({ imgUrl, imgAlt, projectName, projectDesc, link }) {
 
     return (
-        <Link to={props.link}>
+        <Link to={link}>
             <div className={classes.cardHolder}>
                 <div className={classes.projectCard}>
-                    <img className={classes.projectImg} src={props.imgUrl} alt={props.imgAlt} />
-                    <h1 className={classes.text}>{props.projectName}</h1>
-                    <p className={classes.text}>{props.projectDesc}</p>
+                    <img className={classes.projectImg} src={imgUrl} alt={imgAlt} />
+                    <h1 className={classes.text}>{projectName}</h1>
+                    <p className={classes.text}>{projectDesc}</p>
                 </div>
             </div>
         </Link>

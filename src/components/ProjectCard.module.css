@@ -1,6 +1,6 @@
 .cardHolder {
     width: calc(100% / 3);
-    height: 28rem;
+    height: 30vw;
 
     float: left;
 }

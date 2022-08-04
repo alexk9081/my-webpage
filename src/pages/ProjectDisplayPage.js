@@ -1,6 +1,7 @@
 import ProjectCard from "../components/ProjectCard"
 import classes from "./ProjectDisplayPage.module.css";
 import projectList from "../documents/projectsInfo.json";
+import HiddenScrollDiv from "../components/HiddenScrollDiv";
 import { v4 as uuidv4 } from 'uuid';
 
 function ProjectDisplayPage() {
@@ -17,9 +18,11 @@ function ProjectDisplayPage() {
 
     return (
         <div className={classes.projectPage}>
-            <div className={classes.cards}>
-                {projects}
-            </div>
+            <HiddenScrollDiv contentClass={classes.scrollDiv}>
+                <div className={classes.cards}>
+                    {projects}
+                </div>
+            </HiddenScrollDiv>
         </div>
     )
 }

@@ -28,7 +28,7 @@ function PhotoGallery() {
         //Ensure loading page is shown while database is queried
         setIsLoading(true);
 
-        var storageRef = ref(storage, 'anm');
+        let storageRef = ref(storage, 'anm');
 
         function pageController() {
             setIsLoading(false);

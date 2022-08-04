@@ -1,8 +1,11 @@
 .projectPage{
-    padding: 3rem;
     background-color: #1a1c25;
 }
 
 .cards {
     overflow: auto;
+}
+
+.scrollDiv {
+    width: 90vw;
 }
