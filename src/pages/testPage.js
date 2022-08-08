@@ -1,8 +1,6 @@
 import TestDiv from "../components/TestDiv";
 import { useState } from "react";
-import ProjectCard from "../components/ProjectCard";
-import Notifications from "../components/Notifications";
-import Notification from "../components/Notification";
+import HorizontalCarousel from "../components/HorizontalCarousel";
 
 function TestPage() {
     const [show, setShow] = useState(false);
@@ -17,11 +15,13 @@ function TestPage() {
             {show && <p>show is true</p>}
             <button onClick={flip}>flip</button>
             <TestDiv></TestDiv>
-            <ProjectCard />
 
-            <Notifications />
+            <HorizontalCarousel>
+                <div>Div 1</div>
+                <div>Div 2</div>
+                <div>Div 3</div>
+            </HorizontalCarousel>
 
-            <Notification />
         </div>
     )
 }

@@ -1,0 +1,13 @@
+.carousel {
+    border: 1px solid black;
+}
+
+.contentHolder {
+    display: inline-block;
+    border: 1px solid red;
+    width: 30vw;
+}
+
+.buttons {
+    display: inline-block;
+}
