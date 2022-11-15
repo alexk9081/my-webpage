@@ -25,7 +25,7 @@ function App() {
 			<NavigationBar isLoggedInState={loggedIn} setIsLoggedInState={setLoggedIn} setUserState={setUser} />
 			<Notifications ref={notificationRef} />
 			<Routes>
-				<Route exact path='/my-webpage' element={<HomePage />} />
+				<Route exact path='/' element={<HomePage />} />
 				<Route exact path='/gallery' element={<GalleryPage />} />
 				<Route exact path='/info' element={<AboutMePage notification={createNotification} />} />
 				<Route exact path='/photo' element={<AddPicturesPage errorMsg={createNotification}/>} />
